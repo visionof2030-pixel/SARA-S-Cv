@@ -15,25 +15,24 @@
         }
         
         :root {
-            --primary-blue: #4361ee;
-            --secondary-blue: #3a0ca3;
-            --light-blue: #4cc9f0;
-            --accent-pink: #f72585;
-            --light-pink: #ff9ebb;
-            --cream: #fff8f0;
-            --light-cream: #fffcf8;
-            --soft-gray: #f8f9fa;
-            --text-dark: #2b2d42;
-            --text-light: #6c757d;
-            --gradient-primary: linear-gradient(135deg, var(--primary-blue), #7209b7);
-            --gradient-secondary: linear-gradient(135deg, var(--light-blue), #3a0ca3);
-            --gradient-accent: linear-gradient(135deg, var(--accent-pink), #ff9ebb);
-            --gradient-light: linear-gradient(135deg, #ffffff, var(--cream));
+            /* ألوان خردلية وأنيقة مع نصوص بنفسجية */
+            --primary-color: #AC8A3C; /* اللون الخردلي الأساسي */
+            --secondary-color: #431b6f; /* بنفسجي للعناوين */
+            --accent-color: #5D2A9A; /* بنفسجي فاتح */
+            --background-color: #F8F5E6; /* بيج فاتح جداً */
+            --card-bg: #FFFFFF;
+            --light-gray: #F9F7F0; /* بيج فاتح */
+            --text-color: #431b6f; /* بنفسجي للنصوص */
+            --text-light: #6B4F8C; /* بنفسجي فاتح للنصوص الثانوية */
+            --border-color: #E8E4D5;
+            --gradient-primary: linear-gradient(135deg, #AC8A3C 0%, #8B6F2A 100%);
+            --gradient-light: linear-gradient(135deg, #F9F7F0 0%, #E8E4D5 100%);
+            --gradient-purple: linear-gradient(135deg, #431b6f 0%, #5D2A9A 100%); /* تدرج بنفسجي */
         }
         
         body {
-            background: linear-gradient(135deg, #ffffff 0%, var(--cream) 50%, #f0f4ff 100%);
-            color: var(--text-dark);
+            background: var(--background-color);
+            color: var(--text-color);
             line-height: 1.7;
             min-height: 100vh;
             position: relative;
@@ -41,49 +40,32 @@
             -webkit-text-size-adjust: 100%;
         }
         
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 20% 80%, rgba(67, 97, 238, 0.08) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(76, 201, 240, 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 40% 40%, rgba(247, 37, 133, 0.03) 0%, transparent 50%);
-            z-index: -1;
-            pointer-events: none;
-        }
-        
         .container {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 0 15px;
+            padding: 0 20px;
             width: 100%;
         }
         
-        /* الهيدر المشرق */
+        /* الهيدر المصغر للجوال */
         .navbar {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            background: linear-gradient(135deg, #431b6f 0%, #5D2A9A 100%); /* تدرج بنفسجي */
             color: white;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 20px rgba(67, 97, 238, 0.2);
+            box-shadow: 0 4px 20px rgba(67, 27, 111, 0.2);
             height: auto;
-            min-height: 80px;
-            border-bottom: 4px solid var(--accent-pink);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            padding: 10px 0;
+            min-height: 70px;
+            border-bottom: none;
+            padding: 0;
         }
         
         .nav-container {
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 10px 15px;
+            padding: 15px;
             gap: 15px;
         }
         
@@ -91,16 +73,16 @@
             display: flex;
             align-items: center;
             gap: 15px;
-            font-weight: 700;
-            font-size: 1.2rem;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            font-weight: 600;
+            font-size: 1rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
             width: 100%;
             justify-content: center;
             text-align: center;
         }
         
         .logo-icon {
-            background: linear-gradient(135deg, var(--primary-blue), var(--accent-pink));
+            background: var(--gradient-purple);
             width: 50px;
             height: 50px;
             min-width: 50px;
@@ -108,14 +90,14 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 15px rgba(67, 97, 238, 0.3);
-            border: 2px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 6px 20px rgba(67, 27, 111, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.3);
             position: relative;
             overflow: hidden;
         }
         
         .logo-icon i {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             z-index: 1;
             color: white;
         }
@@ -128,27 +110,22 @@
         
         .logo-title {
             font-size: 1.4rem;
-            background: linear-gradient(to right, #ffffff, var(--light-pink));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+            color: white;
             font-weight: 700;
             line-height: 1.3;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            letter-spacing: -0.3px;
         }
         
         .logo-subtitle {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: rgba(255, 255, 255, 0.9);
-            font-weight: 300;
-            margin-top: 3px;
+            margin-top: 4px;
+            font-weight: 400;
         }
         
-        /* شريط الأيقونات الملون */
+        /* شريط الأيقونات المصغر */
         .nav-icons-container {
             background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
             border-radius: 15px;
             padding: 8px;
             width: 100%;
@@ -162,7 +139,7 @@
             gap: 5px;
             overflow-x: auto;
             scrollbar-width: none;
-            padding: 5px;
+            padding: 3px;
             -webkit-overflow-scrolling: touch;
             scroll-behavior: smooth;
         }
@@ -176,88 +153,60 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 8px 12px;
+            padding: 8px 10px;
             cursor: pointer;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             text-decoration: none;
             color: white;
             border-radius: 12px;
-            min-width: 70px;
-            height: 50px;
+            min-width: 65px;
+            height: 45px;
             position: relative;
             overflow: hidden;
             background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(5px);
             flex-shrink: 0;
             touch-action: manipulation;
-        }
-        
-        .nav-icon::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), transparent);
-            opacity: 0;
-            transition: opacity 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
         
         .nav-icon:hover, .nav-icon.active {
             background: rgba(255, 255, 255, 0.25);
-            transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
         }
         
         .nav-icon.active {
-            background: rgba(247, 37, 133, 0.3);
-            box-shadow: 0 6px 15px rgba(247, 37, 133, 0.2);
-        }
-        
-        .nav-icon:hover::before {
-            opacity: 1;
+            background: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.25);
         }
         
         .nav-icon i {
-            font-size: 1.1rem;
-            margin-bottom: 4px;
+            font-size: 1rem;
+            margin-bottom: 3px;
             z-index: 1;
         }
         
         .nav-icon span {
-            font-size: 0.7rem;
-            font-weight: 600;
+            font-size: 0.65rem;
+            font-weight: 500;
             white-space: nowrap;
             z-index: 1;
         }
         
-        /* المحتوى الرئيسي المشرق */
+        /* المحتوى الرئيسي المعدّل للجوال */
         .main-content {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 248, 240, 0.9));
-            border-radius: 20px;
+            background: var(--card-bg);
+            border-radius: 25px;
             box-shadow: 
-                0 10px 30px rgba(67, 97, 238, 0.1),
+                0 15px 35px rgba(67, 27, 111, 0.08),
                 inset 0 1px 0 rgba(255, 255, 255, 0.8);
             margin-top: 20px;
-            margin-bottom: 20px;
-            padding: 25px 20px;
+            margin-bottom: 30px;
+            padding: 30px 25px;
             min-height: auto;
-            border: 1px solid rgba(67, 97, 238, 0.1);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(232, 228, 213, 0.8);
             position: relative;
             overflow: hidden;
-        }
-        
-        .main-content::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary-blue), var(--accent-pink));
         }
         
         .section {
@@ -280,14 +229,15 @@
         }
         
         .section-title {
-            color: var(--secondary-blue);
-            margin-bottom: 25px;
-            padding-bottom: 15px;
-            border-bottom: 2px solid rgba(67, 97, 238, 0.2);
+            color: var(--secondary-color);
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid rgba(67, 27, 111, 0.1);
             position: relative;
-            font-size: 1.6rem;
-            font-weight: 700;
+            font-size: 1.8rem;
+            font-weight: 800;
             line-height: 1.3;
+            letter-spacing: -0.5px;
         }
         
         .section-title::after {
@@ -295,174 +245,116 @@
             position: absolute;
             bottom: -2px;
             right: 0;
-            width: 80px;
-            height: 3px;
-            background: linear-gradient(90deg, var(--primary-blue), var(--accent-pink));
+            width: 100px;
+            height: 4px;
+            background: var(--gradient-purple);
             border-radius: 2px;
         }
         
-        /* قسم نبذة عني المشرق */
+        /* قسم نبذة عني للجوال */
         .about-section {
             max-width: 100%;
             margin: 0 auto;
         }
         
         .about-card {
-            background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(240, 244, 255, 0.9));
-            border-radius: 18px;
-            padding: 25px 20px;
-            margin-bottom: 25px;
-            border-left: 5px solid var(--accent-pink);
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 30px 25px;
+            margin-bottom: 30px;
+            border-left: none;
             box-shadow: 
-                0 10px 25px rgba(67, 97, 238, 0.1),
+                0 15px 30px rgba(67, 27, 111, 0.05),
                 inset 0 1px 0 rgba(255, 255, 255, 0.8);
             animation: fadeIn 0.5s ease;
             position: relative;
             overflow: hidden;
-        }
-        
-        .about-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 200px;
-            height: 200px;
-            background: radial-gradient(circle, rgba(67, 97, 238, 0.05) 0%, transparent 70%);
-            z-index: 0;
+            border: 1px solid rgba(232, 228, 213, 0.8);
         }
         
         .about-header {
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-bottom: 25px;
-            gap: 20px;
+            margin-bottom: 30px;
+            gap: 25px;
             position: relative;
             z-index: 1;
             text-align: center;
         }
         
         .avatar {
-            width: 120px;
-            height: 120px;
+            width: 140px;
+            height: 140px;
             border-radius: 50%;
-            background: linear-gradient(135deg, var(--primary-blue), var(--accent-pink));
+            background: var(--gradient-purple);
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 3rem;
+            font-size: 3.5rem;
             box-shadow: 
-                0 6px 20px rgba(67, 97, 238, 0.2),
+                0 10px 30px rgba(67, 27, 111, 0.2),
                 inset 0 3px 6px rgba(255, 255, 255, 0.3);
-            border: 3px solid rgba(255, 255, 255, 0.3);
+            border: 4px solid rgba(255, 255, 255, 0.5);
         }
         
         .about-info h3 {
-            color: var(--secondary-blue);
-            margin-bottom: 12px;
-            font-size: 1.6rem;
-            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+            font-weight: 800;
             line-height: 1.3;
+            letter-spacing: -0.5px;
         }
         
         .about-info p {
-            color: var(--text-dark);
-            line-height: 1.6;
-            margin-bottom: 10px;
-            font-size: 1rem;
+            color: var(--text-color);
+            line-height: 1.7;
+            margin-bottom: 12px;
+            font-size: 1.05rem;
         }
         
         .highlight {
-            color: var(--accent-pink);
-            font-weight: 600;
+            color: var(--secondary-color);
+            font-weight: 700;
         }
         
         .about-details {
             display: flex;
             flex-direction: column;
-            gap: 20px;
-            margin-top: 25px;
+            gap: 25px;
+            margin-top: 30px;
         }
         
         .detail-item {
-            background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(240, 244, 255, 0.8));
-            border-radius: 15px;
-            padding: 20px;
-            border-top: 3px solid var(--primary-blue);
-            box-shadow: 0 5px 15px rgba(67, 97, 238, 0.1);
-            border: 1px solid rgba(67, 97, 238, 0.1);
+            background: var(--light-gray);
+            border-radius: 18px;
+            padding: 25px;
+            border-top: none;
+            box-shadow: 0 8px 20px rgba(67, 27, 111, 0.03);
+            border: 1px solid rgba(232, 228, 213, 0.8);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         
         .detail-item:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(67, 97, 238, 0.15);
+            box-shadow: 0 15px 30px rgba(67, 27, 111, 0.08);
         }
         
         .detail-item h4 {
-            color: var(--secondary-blue);
-            margin-bottom: 12px;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
             display: flex;
             align-items: center;
-            gap: 12px;
-            font-size: 1.2rem;
+            gap: 15px;
+            font-size: 1.3rem;
+            font-weight: 700;
         }
         
         .detail-item h4 i {
-            color: var(--accent-pink);
-            background: rgba(247, 37, 133, 0.1);
-            width: 35px;
-            height: 35px;
-            min-width: 35px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1rem;
-        }
-        
-        .detail-item p {
-            color: var(--text-dark);
-            line-height: 1.6;
-            font-size: 1rem;
-        }
-        
-        /* المقدمة - ألوان مشرقة */
-        .intro-section {
-            max-width: 100%;
-            margin: 0 auto;
-        }
-        
-        .intro-card {
-            background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(255, 248, 240, 0.9));
-            border-radius: 15px;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-right: 3px solid var(--accent-pink);
-            box-shadow: 0 5px 15px rgba(67, 97, 238, 0.1);
-            border: 1px solid rgba(67, 97, 238, 0.1);
-            transition: transform 0.3s ease;
-        }
-        
-        .intro-card:hover {
-            transform: translateY(-3px);
-        }
-        
-        .intro-card h3 {
-            color: var(--secondary-blue);
-            margin-bottom: 15px;
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            font-size: 1.3rem;
-            line-height: 1.3;
-        }
-        
-        .intro-card h3 i {
-            color: var(--primary-blue);
-            background: rgba(67, 97, 238, 0.1);
+            color: white;
+            background: var(--gradient-purple);
             width: 40px;
             height: 40px;
             min-width: 40px;
@@ -470,34 +362,183 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 10px rgba(67, 27, 111, 0.3);
+        }
+        
+        .detail-item p {
+            color: var(--text-color);
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+        
+        /* قسم الشواهد الوظيفية */
+        .certificates-section {
+            max-width: 100%;
+            margin: 0 auto;
+        }
+        
+        .certificates-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 50px 30px;
+            margin-bottom: 30px;
+            text-align: center;
+            border: 2px dashed rgba(67, 27, 111, 0.3);
+            box-shadow: 
+                0 15px 30px rgba(67, 27, 111, 0.05),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            animation: fadeIn 0.5s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .certificates-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 35px;
+        }
+        
+        .hourglass-container {
+            position: relative;
+            width: 140px;
+            height: 140px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .hourglass {
+            font-size: 4.5rem;
+            color: var(--secondary-color);
+            animation: hourglassRotate 3s infinite ease-in-out;
+        }
+        
+        @keyframes hourglassRotate {
+            0% { transform: rotate(0deg); }
+            25% { transform: rotate(90deg); }
+            50% { transform: rotate(180deg); }
+            75% { transform: rotate(270deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .hourglass-shadow {
+            position: absolute;
+            bottom: -10px;
+            width: 100px;
+            height: 20px;
+            background: rgba(67, 27, 111, 0.1);
+            border-radius: 50%;
+            filter: blur(8px);
+            animation: shadowPulse 3s infinite ease-in-out;
+        }
+        
+        @keyframes shadowPulse {
+            0%, 100% { width: 100px; opacity: 0.1; }
+            50% { width: 110px; opacity: 0.2; }
+        }
+        
+        .certificates-text {
+            text-align: center;
+        }
+        
+        .certificates-text h3 {
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            font-size: 2rem;
+            font-weight: 800;
+        }
+        
+        .certificates-text p {
+            color: var(--secondary-color);
+            font-size: 1.4rem;
+            font-weight: 700;
+            line-height: 1.5;
+            background: var(--light-gray);
+            padding: 20px 25px;
+            border-radius: 15px;
+            border: 1px solid rgba(232, 228, 213, 0.8);
+        }
+        
+        /* المقدمة - للجوال */
+        .intro-section {
+            max-width: 100%;
+            margin: 0 auto;
+        }
+        
+        .intro-card {
+            background: var(--card-bg);
+            border-radius: 18px;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-right: none;
+            box-shadow: 0 8px 20px rgba(67, 27, 111, 0.03);
+            border: 1px solid rgba(232, 228, 213, 0.8);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .intro-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(67, 27, 111, 0.08);
+        }
+        
+        .intro-card h3 {
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            font-size: 1.4rem;
+            line-height: 1.3;
+            font-weight: 700;
+        }
+        
+        .intro-card h3 i {
+            color: white;
+            background: var(--gradient-purple);
+            width: 45px;
+            height: 45px;
+            min-width: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 10px rgba(67, 27, 111, 0.3);
             margin-top: 2px;
         }
         
         .intro-card p {
-            color: var(--text-dark);
-            line-height: 1.6;
-            margin-bottom: 12px;
-            font-size: 1rem;
+            color: var(--text-color);
+            line-height: 1.7;
+            margin-bottom: 15px;
+            font-size: 1.05rem;
         }
         
-        /* السيرة المهنية - ألوان مشرقة */
+        /* السيرة المهنية المختصرة للجوال */
         .bio-grid {
             display: flex;
             flex-direction: column;
-            gap: 20px;
-            margin-top: 25px;
+            gap: 25px;
+            margin-top: 30px;
         }
         
         .bio-card {
-            background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(240, 244, 255, 0.9));
-            border-radius: 15px;
-            padding: 20px;
-            border: 1px solid rgba(67, 97, 238, 0.1);
+            background: var(--light-gray);
+            border-radius: 18px;
+            padding: 25px;
+            border: 1px solid rgba(232, 228, 213, 0.8);
             text-align: center;
             position: relative;
             overflow: hidden;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .bio-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(67, 27, 111, 0.08);
         }
         
         .bio-card::before {
@@ -507,85 +548,84 @@
             left: 0;
             width: 100%;
             height: 4px;
-            background: linear-gradient(90deg, var(--primary-blue), var(--accent-pink));
-        }
-        
-        .bio-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(67, 97, 238, 0.15);
+            background: var(--gradient-purple);
         }
         
         .bio-card i {
-            font-size: 2.5rem;
-            color: var(--accent-pink);
-            margin-bottom: 15px;
-            background: rgba(247, 37, 133, 0.1);
-            width: 70px;
-            height: 70px;
+            font-size: 2.8rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            background: rgba(249, 247, 240, 0.8);
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-left: auto;
             margin-right: auto;
+            border: 2px solid rgba(232, 228, 213, 0.8);
         }
         
         .bio-card h4 {
-            color: var(--secondary-blue);
-            margin-bottom: 12px;
-            font-size: 1.3rem;
-            font-weight: 600;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            font-weight: 700;
         }
         
         .bio-card p {
-            color: var(--text-dark);
-            font-size: 1rem;
-            line-height: 1.6;
+            color: var(--text-color);
+            font-size: 1.05rem;
+            line-height: 1.7;
         }
         
-        /* التخطيط للتدريس - ألوان مشرقة */
+        /* التخطيط للتدريس للجوال */
         .planning-grid {
             display: flex;
             flex-direction: column;
-            gap: 20px;
-            margin-top: 25px;
+            gap: 25px;
+            margin-top: 30px;
         }
         
         .plan-card {
-            background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(240, 244, 255, 0.9));
-            border-radius: 15px;
-            padding: 20px;
-            border-top: 5px solid var(--primary-blue);
-            box-shadow: 0 5px 15px rgba(67, 97, 238, 0.1);
-            border: 1px solid rgba(67, 97, 238, 0.1);
-            transition: transform 0.3s ease;
+            background: var(--light-gray);
+            border-radius: 18px;
+            padding: 25px;
+            border-top: none;
+            box-shadow: 0 8px 20px rgba(67, 27, 111, 0.03);
+            border: 1px solid rgba(232, 228, 213, 0.8);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         
         .plan-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(67, 27, 111, 0.08);
         }
         
         .plan-card h4 {
-            color: var(--secondary-blue);
-            margin-bottom: 15px;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
             display: flex;
             align-items: flex-start;
-            gap: 12px;
-            font-size: 1.3rem;
+            gap: 15px;
+            font-size: 1.4rem;
             line-height: 1.3;
+            font-weight: 700;
         }
         
         .plan-card h4 i {
-            color: var(--primary-blue);
-            background: rgba(67, 97, 238, 0.1);
-            width: 40px;
-            height: 40px;
-            min-width: 40px;
+            color: white;
+            background: var(--gradient-purple);
+            width: 45px;
+            height: 45px;
+            min-width: 45px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 10px rgba(67, 27, 111, 0.3);
             margin-top: 2px;
         }
         
@@ -595,40 +635,45 @@
         }
         
         .plan-card li {
-            padding: 10px 0;
-            border-bottom: 1px solid rgba(67, 97, 238, 0.1);
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(232, 228, 213, 0.8);
             position: relative;
-            padding-right: 25px;
-            color: var(--text-dark);
-            font-size: 1rem;
-            line-height: 1.5;
+            padding-right: 30px;
+            color: var(--text-color);
+            font-size: 1.05rem;
+            line-height: 1.6;
         }
         
         .plan-card li:before {
             content: "•";
-            color: var(--accent-pink);
-            font-size: 1.5rem;
+            color: var(--secondary-color);
+            font-size: 1.8rem;
             position: absolute;
             right: 0;
-            top: 8px;
+            top: 10px;
         }
         
-        /* استراتيجيات التدريس - ألوان مشرقة */
+        /* استراتيجيات التدريس للجوال */
         .strategy-container {
             display: flex;
             flex-direction: column;
-            gap: 20px;
-            margin-top: 25px;
+            gap: 25px;
+            margin-top: 30px;
         }
         
         .strategy-card {
-            background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(240, 244, 255, 0.9));
-            border-radius: 15px;
-            padding: 20px;
-            border: 1px solid rgba(67, 97, 238, 0.1);
+            background: var(--light-gray);
+            border-radius: 18px;
+            padding: 25px;
+            border: 1px solid rgba(232, 228, 213, 0.8);
             position: relative;
             overflow: hidden;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .strategy-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(67, 27, 111, 0.08);
         }
         
         .strategy-card::before {
@@ -638,72 +683,71 @@
             left: 0;
             width: 4px;
             height: 100%;
-            background: linear-gradient(180deg, var(--primary-blue), var(--accent-pink));
-        }
-        
-        .strategy-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(67, 97, 238, 0.15);
+            background: var(--gradient-purple);
         }
         
         .strategy-card h4 {
-            color: var(--secondary-blue);
-            margin-bottom: 12px;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
             display: flex;
             align-items: flex-start;
-            gap: 12px;
-            font-size: 1.3rem;
+            gap: 15px;
+            font-size: 1.4rem;
             line-height: 1.3;
+            font-weight: 700;
         }
         
         .strategy-card h4 i {
-            color: var(--primary-blue);
-            background: rgba(67, 97, 238, 0.1);
-            width: 40px;
-            height: 40px;
-            min-width: 40px;
+            color: white;
+            background: var(--gradient-purple);
+            width: 45px;
+            height: 45px;
+            min-width: 45px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 10px rgba(67, 27, 111, 0.3);
             margin-top: 2px;
         }
         
         .strategy-card p {
-            color: var(--text-dark);
-            font-size: 1rem;
-            line-height: 1.6;
+            color: var(--text-color);
+            font-size: 1.05rem;
+            line-height: 1.7;
         }
         
-        /* التقنية والمبادرات - ألوان مشرقة */
+        /* التقنية والمبادرات للجوال */
         .tech-grid {
             display: flex;
             flex-direction: column;
-            gap: 20px;
-            margin-top: 25px;
+            gap: 25px;
+            margin-top: 30px;
         }
         
         .tech-card {
-            background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(240, 244, 255, 0.9));
-            border-radius: 15px;
-            padding: 20px;
-            border-left: 5px solid var(--accent-pink);
-            box-shadow: 0 5px 15px rgba(67, 97, 238, 0.1);
-            border: 1px solid rgba(67, 97, 238, 0.1);
-            transition: transform 0.3s ease;
+            background: var(--light-gray);
+            border-radius: 18px;
+            padding: 25px;
+            border-left: none;
+            box-shadow: 0 8px 20px rgba(67, 27, 111, 0.03);
+            border: 1px solid rgba(232, 228, 213, 0.8);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         
         .tech-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(67, 27, 111, 0.08);
         }
         
         .tech-card h4 {
-            color: var(--secondary-blue);
-            margin-bottom: 15px;
-            font-size: 1.3rem;
-            padding-bottom: 8px;
-            border-bottom: 1px solid rgba(67, 97, 238, 0.2);
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(67, 27, 111, 0.2);
+            font-weight: 700;
         }
         
         .tech-card ul {
@@ -712,142 +756,137 @@
         }
         
         .tech-card li {
-            padding: 10px 0;
-            color: var(--text-dark);
+            padding: 12px 0;
+            color: var(--text-color);
             position: relative;
-            padding-right: 25px;
-            border-bottom: 1px solid rgba(67, 97, 238, 0.1);
-            font-size: 1rem;
-            line-height: 1.5;
+            padding-right: 30px;
+            border-bottom: 1px solid rgba(232, 228, 213, 0.8);
+            font-size: 1.05rem;
+            line-height: 1.6;
         }
         
         .tech-card li:before {
             content: "✓";
-            color: var(--accent-pink);
+            color: var(--secondary-color);
             position: absolute;
             right: 0;
-            top: 10px;
+            top: 12px;
             font-weight: bold;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
         }
         
-        /* التعلم الذاتي - ألوان مشرقة */
+        /* التعلم الذاتي للجوال */
         .self-learning {
             display: flex;
             flex-direction: column;
-            gap: 20px;
-            margin-top: 25px;
+            gap: 25px;
+            margin-top: 30px;
         }
         
         .learning-card {
-            background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(240, 244, 255, 0.9));
-            border-radius: 15px;
-            padding: 20px;
-            border: 1px solid rgba(67, 97, 238, 0.1);
-            transition: transform 0.3s ease;
+            background: var(--light-gray);
+            border-radius: 18px;
+            padding: 25px;
+            border: 1px solid rgba(232, 228, 213, 0.8);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         
         .learning-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(67, 27, 111, 0.08);
         }
         
         .learning-card h4 {
-            color: var(--secondary-blue);
-            margin-bottom: 15px;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
             display: flex;
             align-items: flex-start;
-            gap: 12px;
-            font-size: 1.3rem;
+            gap: 15px;
+            font-size: 1.4rem;
             line-height: 1.3;
+            font-weight: 700;
         }
         
         .learning-card h4 i {
-            color: var(--primary-blue);
-            background: rgba(67, 97, 238, 0.1);
-            width: 40px;
-            height: 40px;
-            min-width: 40px;
+            color: white;
+            background: var(--gradient-purple);
+            width: 45px;
+            height: 45px;
+            min-width: 45px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 10px rgba(67, 27, 111, 0.3);
             margin-top: 2px;
         }
         
         .learning-card p {
-            color: var(--text-dark);
-            line-height: 1.6;
-            font-size: 1rem;
+            color: var(--text-color);
+            line-height: 1.7;
+            font-size: 1.05rem;
         }
         
-        /* التقييم الذاتي - ألوان مشرقة */
+        /* التقييم الذاتي للجوال */
         .assessment-container {
             display: flex;
             flex-direction: column;
-            gap: 20px;
-            margin-top: 25px;
+            gap: 25px;
+            margin-top: 30px;
         }
         
         .assessment-card {
-            background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(240, 244, 255, 0.9));
-            border-radius: 15px;
-            padding: 20px;
-            border-top: 5px solid;
-            box-shadow: 0 5px 15px rgba(67, 97, 238, 0.1);
-            border: 1px solid rgba(67, 97, 238, 0.1);
-            transition: transform 0.3s ease;
-        }
-        
-        .strength {
-            border-top-color: var(--primary-blue);
-        }
-        
-        .improvement {
-            border-top-color: var(--accent-pink);
-        }
-        
-        .plan {
-            border-top-color: var(--light-blue);
+            background: var(--light-gray);
+            border-radius: 18px;
+            padding: 25px;
+            border-top: none;
+            box-shadow: 0 8px 20px rgba(67, 27, 111, 0.03);
+            border: 1px solid rgba(232, 228, 213, 0.8);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         
         .assessment-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(67, 27, 111, 0.08);
+        }
+        
+        .strength {
+            border-top: 4px solid #8A4FBF; /* بنفسجي متوسط */
+        }
+        
+        .improvement {
+            border-top: 4px solid #B86CF5; /* بنفسجي فاتح */
+        }
+        
+        .plan {
+            border-top: 4px solid #431b6f; /* بنفسجي غامق */
         }
         
         .assessment-card h4 {
-            color: var(--secondary-blue);
-            margin-bottom: 15px;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
             display: flex;
             align-items: flex-start;
-            gap: 12px;
-            font-size: 1.3rem;
+            gap: 15px;
+            font-size: 1.4rem;
             line-height: 1.3;
+            font-weight: 700;
         }
         
         .assessment-card h4 i {
-            background: rgba(67, 97, 238, 0.1);
-            width: 40px;
-            height: 40px;
-            min-width: 40px;
+            background: rgba(255, 255, 255, 0.9);
+            width: 45px;
+            height: 45px;
+            min-width: 45px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             margin-top: 2px;
-        }
-        
-        .strength h4 i {
-            color: var(--primary-blue);
-        }
-        
-        .improvement h4 i {
-            color: var(--accent-pink);
-        }
-        
-        .plan h4 i {
-            color: var(--light-blue);
+            color: var(--secondary-color);
+            box-shadow: 0 4px 10px rgba(67, 27, 111, 0.1);
         }
         
         .assessment-card ul {
@@ -856,33 +895,33 @@
         }
         
         .assessment-card li {
-            padding: 10px 0;
-            color: var(--text-dark);
+            padding: 12px 0;
+            color: var(--text-color);
             position: relative;
-            padding-right: 25px;
-            border-bottom: 1px solid rgba(67, 97, 238, 0.1);
-            font-size: 1rem;
-            line-height: 1.5;
+            padding-right: 30px;
+            border-bottom: 1px solid rgba(232, 228, 213, 0.8);
+            font-size: 1.05rem;
+            line-height: 1.6;
         }
         
         .assessment-card li:before {
             content: "•";
-            color: var(--accent-pink);
+            color: var(--secondary-color);
             position: absolute;
             right: 0;
-            top: 10px;
-            font-size: 1.5rem;
+            top: 12px;
+            font-size: 1.8rem;
         }
         
-        /* الخاتمة - ألوان مشرقة */
+        /* الخاتمة للجوال */
         .conclusion-card {
-            background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(240, 244, 255, 0.9));
-            border-radius: 18px;
-            padding: 25px 20px;
-            margin-top: 30px;
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 30px 25px;
+            margin-top: 35px;
             text-align: center;
-            border: 1px solid rgba(67, 97, 238, 0.1);
-            box-shadow: 0 10px 25px rgba(67, 97, 238, 0.1);
+            border: 1px solid rgba(232, 228, 213, 0.8);
+            box-shadow: 0 15px 30px rgba(67, 27, 111, 0.05);
             position: relative;
             overflow: hidden;
         }
@@ -894,61 +933,61 @@
             left: 0;
             width: 100%;
             height: 4px;
-            background: linear-gradient(90deg, var(--primary-blue), var(--accent-pink));
+            background: var(--gradient-purple);
         }
         
         .conclusion-card h3 {
-            color: var(--secondary-blue);
-            margin-bottom: 20px;
-            font-size: 1.6rem;
+            color: var(--secondary-color);
+            margin-bottom: 25px;
+            font-size: 1.8rem;
             line-height: 1.3;
+            font-weight: 800;
         }
         
         .conclusion-card p {
-            color: var(--text-dark);
-            line-height: 1.6;
-            margin-bottom: 15px;
-            font-size: 1rem;
+            color: var(--text-color);
+            line-height: 1.7;
+            margin-bottom: 20px;
+            font-size: 1.05rem;
             text-align: right;
         }
         
-        /* تذييل الصفحة - ألوان مشرقة */
+        /* تذييل الصفحة للجوال */
         .footer {
             text-align: center;
-            padding: 20px 15px;
-            margin-top: 20px;
+            padding: 25px 20px;
+            margin-top: 25px;
             color: var(--text-light);
-            border-top: 1px solid rgba(67, 97, 238, 0.1);
-            font-size: 0.85rem;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 12px;
-            margin-bottom: 15px;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            line-height: 1.5;
+            border-top: 1px solid rgba(232, 228, 213, 0.8);
+            font-size: 0.9rem;
+            background: var(--card-bg);
+            border-radius: 15px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            box-shadow: 0 8px 20px rgba(67, 27, 111, 0.03);
         }
         
         /* تحسينات للشاشات المتوسطة والكبيرة */
         @media (min-width: 576px) {
             .container {
-                padding: 0 20px;
+                padding: 0 25px;
             }
             
             .nav-icon {
-                min-width: 80px;
-                padding: 10px 15px;
+                min-width: 70px;
+                padding: 10px 12px;
             }
             
             .nav-icon span {
-                font-size: 0.75rem;
+                font-size: 0.7rem;
             }
             
             .logo-title {
-                font-size: 1.5rem;
+                font-size: 1.6rem;
             }
             
             .section-title {
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
             
             .about-header {
@@ -958,19 +997,19 @@
             }
             
             .avatar {
-                width: 140px;
-                height: 140px;
-                font-size: 3.5rem;
+                width: 160px;
+                height: 160px;
+                font-size: 4rem;
             }
             
             .about-info h3 {
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
         }
         
         @media (min-width: 768px) {
             .navbar {
-                height: 100px;
+                height: 90px;
                 padding: 0;
             }
             
@@ -978,7 +1017,8 @@
                 flex-direction: row;
                 justify-content: space-between;
                 padding: 0 30px;
-                height: 100px;
+                height: 90px;
+                gap: 0;
             }
             
             .logo {
@@ -988,80 +1028,80 @@
             
             .nav-icons-container {
                 width: auto;
-                max-width: 70%;
+                max-width: 75%;
             }
             
             .logo-title {
-                font-size: 1.6rem;
+                font-size: 1.8rem;
             }
             
             .logo-subtitle {
-                font-size: 1rem;
+                font-size: 0.9rem;
             }
             
             .main-content {
-                padding: 35px 30px;
+                padding: 40px 35px;
             }
             
             .section-title {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
             
             .about-details {
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
-                gap: 25px;
+                gap: 30px;
             }
             
             .bio-grid {
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
-                gap: 25px;
+                gap: 30px;
             }
             
             .planning-grid {
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
-                gap: 25px;
+                gap: 30px;
             }
             
             .strategy-container {
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
-                gap: 25px;
+                gap: 30px;
             }
             
             .tech-grid {
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
-                gap: 25px;
+                gap: 30px;
             }
             
             .self-learning {
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
-                gap: 25px;
+                gap: 30px;
             }
             
             .assessment-container {
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
-                gap: 25px;
+                gap: 30px;
             }
         }
         
         @media (min-width: 992px) {
             .nav-icons-container {
-                max-width: 75%;
+                max-width: 80%;
             }
             
             .nav-icon {
-                min-width: 85px;
-                padding: 10px 18px;
+                min-width: 75px;
+                padding: 10px 15px;
             }
             
             .nav-icon span {
-                font-size: 0.8rem;
+                font-size: 0.75rem;
             }
             
             .about-details {
@@ -1091,11 +1131,11 @@
         
         @media (min-width: 1200px) {
             .nav-icon {
-                min-width: 90px;
+                min-width: 80px;
             }
             
             .logo-title {
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
             
             .planning-grid {
@@ -1107,7 +1147,56 @@
             }
         }
         
-        /* تأثيرات إضافية */
+        @media (max-height: 600px) and (orientation: landscape) {
+            .navbar {
+                height: auto;
+                min-height: 60px;
+            }
+            
+            .nav-container {
+                flex-direction: row;
+                padding: 10px 15px;
+            }
+            
+            .logo-icon {
+                width: 40px;
+                height: 40px;
+                min-width: 40px;
+            }
+            
+            .logo-icon i {
+                font-size: 1.1rem;
+            }
+            
+            .logo-title {
+                font-size: 1.2rem;
+            }
+            
+            .nav-icon {
+                min-width: 60px;
+                height: 40px;
+                padding: 6px 8px;
+            }
+            
+            .nav-icon i {
+                font-size: 0.9rem;
+                margin-bottom: 2px;
+            }
+            
+            .nav-icon span {
+                font-size: 0.6rem;
+            }
+        }
+        
+        .nav-icon:active {
+            transform: scale(0.95);
+            transition: transform 0.1s ease;
+        }
+        
+        input, select, textarea {
+            font-size: 16px;
+        }
+        
         .fade-in-element {
             opacity: 0;
             transform: translateY(20px);
@@ -1119,7 +1208,6 @@
             transform: translateY(0);
         }
         
-        /* تأثيرات متحركة */
         @keyframes pulse {
             0% { transform: scale(1); }
             50% { transform: scale(1.05); }
@@ -1140,7 +1228,6 @@
             animation: floating 3s ease-in-out infinite;
         }
         
-        /* تحسين الأداء للجوال */
         .no-select {
             -webkit-touch-callout: none;
             -webkit-user-select: none;
@@ -1149,10 +1236,19 @@
             -ms-user-select: none;
             user-select: none;
         }
+        
+        * {
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        @supports (-webkit-touch-callout: none) {
+            .navbar {
+                position: -webkit-sticky;
+            }
+        }
     </style>
 </head>
 <body class="no-select">
-    <!-- الهيدر المشرق -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo">
@@ -1161,7 +1257,7 @@
                 </div>
                 <div class="logo-text">
                     <div class="logo-title">ملف الإنجاز المهني</div>
-                    <div class="logo-subtitle">المعلمة: سارة الخالدي</div>
+                    <div class="logo-subtitle">المعلمة سارة الخالدي</div>
                 </div>
             </div>
             
@@ -1182,6 +1278,10 @@
                     <a href="#" class="nav-icon" data-target="planning">
                         <i class="fas fa-calendar-alt"></i>
                         <span>التخطيط</span>
+                    </a>
+                    <a href="#" class="nav-icon" data-target="certificates">
+                        <i class="fas fa-certificate"></i>
+                        <span>الشواهد</span>
                     </a>
                     <a href="#" class="nav-icon" data-target="strategies">
                         <i class="fas fa-chalkboard"></i>
@@ -1220,10 +1320,8 @@
         </div>
     </nav>
 
-    <!-- المحتوى الرئيسي المشرق -->
     <div class="container">
         <div class="main-content">
-            <!-- نبذة عني -->
             <section id="about" class="section active">
                 <h2 class="section-title">نبذة عني</h2>
                 <div class="about-section">
@@ -1254,14 +1352,13 @@
                             
                             <div class="detail-item fade-in-element">
                                 <h4><i class="fas fa-trophy"></i> إنجازاتي التربوية</h4>
-                                <p>حصلت على تقدير "المعلم المتميز" مرتين، وساهمت في رفع معدل نجاح طلابي في اختبارات الرياضيات بنسبة 40%.</p>
+                                <p>حصلت على تقدير "المعلم المتميز" في القطاع الخاص، وساهمت في رفع معدل نجاح طلابي في اختبارات الرياضيات بنسبة 40%.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
             
-            <!-- المقدمة -->
             <section id="intro" class="section">
                 <h2 class="section-title">المقدمة</h2>
                 <div class="intro-section">
@@ -1282,14 +1379,13 @@
                 </div>
             </section>
             
-            <!-- السيرة المهنية المختصرة -->
             <section id="bio" class="section">
                 <h2 class="section-title">السيرة المهنية المختصرة</h2>
                 <div class="bio-grid">
                     <div class="bio-card fade-in-element">
                         <i class="fas fa-graduation-cap"></i>
                         <h4>المؤهل العلمي</h4>
-                        <p>بكالوريوس تربية - تخصص رياضيات وإحصاء - جامعة الطائف - بتقدير امتياز</p>
+                        <p>بكالوريوس - تخصص رياضيات وإحصاء - جامعة الطائف</p>
                     </div>
                     
                     <div class="bio-card fade-in-element">
@@ -1312,7 +1408,6 @@
                 </div>
             </section>
             
-            <!-- التخطيط للتدريس -->
             <section id="planning" class="section">
                 <h2 class="section-title">التخطيط للتدريس</h2>
                 <div class="planning-grid">
@@ -1351,7 +1446,30 @@
                 </div>
             </section>
             
-            <!-- استراتيجيات التدريس -->
+            <section id="certificates" class="section">
+                <h2 class="section-title">الشواهد الوظيفية</h2>
+                <div class="certificates-section">
+                    <div class="certificates-card">
+                        <div class="certificates-content">
+                            <div class="hourglass-container">
+                                <div class="hourglass">
+                                    <i class="fas fa-hourglass-half"></i>
+                                </div>
+                                <div class="hourglass-shadow"></div>
+                            </div>
+                            <div class="certificates-text">
+                                <h3>الشواهد والتقديرات الوظيفية</h3>
+                                <p>سيتم إضافة جميع الشواهد الوظيفية قريباً</p>
+                                <p style="margin-top: 20px; color: var(--secondary-color); font-size: 1rem;">
+                                    <i class="fas fa-spinner fa-spin" style="margin-left: 5px;"></i>
+                                    جاري تحديث المحتوى
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
             <section id="strategies" class="section">
                 <h2 class="section-title">استراتيجيات التدريس المستخدمة</h2>
                 <div class="strategy-container">
@@ -1377,7 +1495,6 @@
                 </div>
             </section>
             
-            <!-- التقويم والاختبارات -->
             <section id="evaluation" class="section">
                 <h2 class="section-title">التقويم والاختبارات</h2>
                 <div class="tech-grid">
@@ -1423,7 +1540,6 @@
                 </div>
             </section>
             
-            <!-- التقنية في التعليم -->
             <section id="technology" class="section">
                 <h2 class="section-title">توظيف التقنية في التعليم</h2>
                 <div class="tech-grid">
@@ -1460,7 +1576,6 @@
                 </div>
             </section>
             
-            <!-- المبادرات -->
             <section id="initiatives" class="section">
                 <h2 class="section-title">المبادرات الصفية والمدرسية</h2>
                 <div class="strategy-container">
@@ -1481,7 +1596,6 @@
                 </div>
             </section>
             
-            <!-- العناية بالطلاب -->
             <section id="students" class="section">
                 <h2 class="section-title">العناية بالطلاب</h2>
                 <div class="tech-grid">
@@ -1517,7 +1631,6 @@
                 </div>
             </section>
             
-            <!-- التعلم الذاتي -->
             <section id="self-learning" class="section">
                 <h2 class="section-title">التعلم الذاتي والتطوير المهني</h2>
                 <div class="self-learning">
@@ -1538,7 +1651,6 @@
                 </div>
             </section>
             
-            <!-- التقييم الذاتي -->
             <section id="assessment" class="section">
                 <h2 class="section-title">التقييم الذاتي والتطوير المهني</h2>
                 <div class="assessment-container">
@@ -1575,7 +1687,6 @@
                 </div>
             </section>
             
-            <!-- الخاتمة -->
             <section id="conclusion" class="section">
                 <h2 class="section-title">الخاتمة والتطلعات</h2>
                 <div class="conclusion-card">
@@ -1583,12 +1694,12 @@
                     <p>تمثل مسيرتي التعليمية رحلة متواصلة من التعلم والتطوير، حيث أسعى دائماً إلى تجويد ممارساتي التعليمية والارتقاء بمستوى أدائي المهني.</p>
                     <p>أتطلع إلى المساهمة الفعالة في تطوير التعليم الرياضي على مستوى المدرسة والمجتمع المحلي، من خلال تبني المبادرات التربوية المبتكرة.</p>
                     <p>أهدف إلى ترسيخ ثقافة التميز والإبداع في تدريس الرياضيات، وجعلها مادة محببة ومفهومة لجميع الطلاب.</p>
-                    <div style="margin-top: 25px; padding-top: 20px; border-top: 2px solid rgba(67, 97, 238, 0.2);">
-                        <p style="font-weight: 700; color: var(--secondary-blue); font-size: 1.1rem;">
-                            المعلمة المتميزة<br>
-                            <span style="color: var(--accent-pink); font-size: 1.2rem;">سارة خويتم الخالدي</span><br>
+                    <div style="margin-top: 25px; padding-top: 20px; border-top: 2px solid rgba(232, 228, 213, 0.8);">
+                        <p style="font-weight: 700; color: var(--secondary-color); font-size: 1.1rem;">
+                            المعلمة<br>
+                            <span style="color: var(--secondary-color); font-size: 1.2rem;">سارة خويتم الخالدي</span><br>
                             معلمة رياضيات - المرحلة الابتدائية<br>
-                            ديسمبر 2023
+                            ديسمبر 2025
                         </p>
                     </div>
                 </div>
@@ -1596,12 +1707,12 @@
         </div>
         
         <div class="footer">
-            <p>© 2023 ملف الإنجاز - المعلمة سارة خويتم الخالدي</p>
-            <p>جميع الحقوق محفوظة | تم التحديث في ديسمبر 2023</p>
+            <p>© 2025 ملف الإنجاز المهني - المعلمة سارة خويتم الخالدي</p>
+            <p>جميع الحقوق محفوظة | تم التحديث في ديسمبر 2025</p>
             <div style="margin-top: 15px;">
-                <i class="fas fa-envelope" style="margin: 0 10px; color: var(--accent-pink);"></i>
-                <i class="fas fa-phone" style="margin: 0 10px; color: var(--primary-blue);"></i>
-                <i class="fas fa-globe" style="margin: 0 10px; color: var(--light-blue);"></i>
+                <i class="fas fa-envelope" style="margin: 0 10px; color: var(--secondary-color);"></i>
+                <i class="fas fa-phone" style="margin: 0 10px; color: var(--secondary-color);"></i>
+                <i class="fas fa-globe" style="margin: 0 10px; color: var(--secondary-color);"></i>
             </div>
         </div>
     </div>
@@ -1611,22 +1722,21 @@
             const navIcons = document.querySelectorAll('.nav-icon');
             const sections = document.querySelectorAll('.section');
             
-            // وظيفة لتحميل الأقسام
             function loadSection(targetId) {
-                // إزالة النشاط من جميع الأيقونات
                 navIcons.forEach(item => item.classList.remove('active'));
                 
-                // إضافة النشاط للأيقونة المختارة
-                document.querySelector(`.nav-icon[data-target="${targetId}"]`).classList.add('active');
+                const targetIcon = document.querySelector(`.nav-icon[data-target="${targetId}"]`);
+                if (targetIcon) {
+                    targetIcon.classList.add('active');
+                }
                 
-                // إخفاء جميع الأقسام
                 sections.forEach(section => section.classList.remove('active'));
                 
-                // عرض القسم المطلوب
                 const targetSection = document.getElementById(targetId);
-                targetSection.classList.add('active');
+                if (targetSection) {
+                    targetSection.classList.add('active');
+                }
                 
-                // تفعيل تأثيرات الظهور
                 setTimeout(() => {
                     const currentFadeElements = targetSection.querySelectorAll('.fade-in-element');
                     currentFadeElements.forEach((el, index) => {
@@ -1636,7 +1746,6 @@
                     });
                 }, 100);
                 
-                // التمرير للنصف العلوي من الصفحة على الجوال
                 if (window.innerWidth < 768) {
                     window.scrollTo({
                         top: 0,
@@ -1645,7 +1754,6 @@
                 }
             }
             
-            // إضافة Event Listeners للأيقونات
             navIcons.forEach(icon => {
                 icon.addEventListener('click', function(e) {
                     e.preventDefault();
@@ -1653,7 +1761,6 @@
                     loadSection(targetId);
                 });
                 
-                // تحسين التفاعل على الجوال
                 icon.addEventListener('touchstart', function() {
                     this.style.opacity = '0.8';
                 });
@@ -1663,7 +1770,6 @@
                 });
             });
             
-            // تفعيل تأثيرات الظهور عند التمرير
             const observerOptions = {
                 threshold: 0.1,
                 rootMargin: '0px 0px -30px 0px'
@@ -1681,7 +1787,6 @@
                 observer.observe(element);
             });
             
-            // تفعيل العناصر في الصفحة الأولى
             setTimeout(() => {
                 document.querySelectorAll('#about .fade-in-element').forEach((el, index) => {
                     setTimeout(() => {
@@ -1690,8 +1795,70 @@
                 });
             }, 300);
             
-            // تهيئة الصفحة الأولى
+            const navIconsContainer = document.querySelector('.nav-icons');
+            let isScrolling = false;
+            
+            if (navIconsContainer) {
+                navIconsContainer.addEventListener('touchmove', function(e) {
+                    if (!isScrolling) {
+                        isScrolling = true;
+                        setTimeout(() => {
+                            isScrolling = false;
+                        }, 100);
+                    }
+                });
+            }
+            
+            document.body.addEventListener('touchmove', function(e) {
+                if (e.target.closest('.nav-icons')) {
+                    return;
+                }
+            }, { passive: true });
+            
+            let lastScrollTop = 0;
+            const navbar = document.querySelector('.navbar');
+            
+            window.addEventListener('scroll', function() {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                
+                if (scrollTop > lastScrollTop && scrollTop > 100) {
+                    navbar.style.transform = 'translateY(-100%)';
+                    navbar.style.transition = 'transform 0.3s ease';
+                } else {
+                    navbar.style.transform = 'translateY(0)';
+                }
+                
+                lastScrollTop = scrollTop;
+            });
+            
             loadSection('about');
+        });
+        
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+                document.body.style.transition = 'opacity 0.3s ease';
+            }, 100);
+            
+            if (window.innerWidth <= 480) {
+                document.querySelectorAll('p, li, span').forEach(el => {
+                    const currentSize = parseFloat(window.getComputedStyle(el).fontSize);
+                    if (currentSize > 14) {
+                        el.style.fontSize = (currentSize * 0.95) + 'px';
+                    }
+                });
+            }
+            
+            if (/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream) {
+                document.body.style.webkitBackfaceVisibility = 'hidden';
+                document.body.style.webkitTransform = 'translateZ(0)';
+            }
+        });
+        
+        document.addEventListener('touchstart', function(event) {
+            if (event.target.tagName === 'INPUT' || event.target.tagName === 'TEXTAREA') {
+                event.target.style.fontSize = '16px';
+            }
         });
     </script>
 </body>
