@@ -15,19 +15,20 @@
         }
         
         :root {
-            /* ألوان خردلية وأنيقة مع نصوص بنفسجية */
-            --primary-color: #AC8A3C; /* اللون الخردلي الأساسي */
-            --secondary-color: #431b6f; /* بنفسجي للعناوين */
-            --accent-color: #5D2A9A; /* بنفسجي فاتح */
-            --background-color: #F8F5E6; /* بيج فاتح جداً */
+            --primary-color: #AC8A3C;
+            --secondary-color: #431b6f;
+            --accent-color: #5D2A9A;
+            --background-color: #F8F5E6;
             --card-bg: #FFFFFF;
-            --light-gray: #F9F7F0; /* بيج فاتح */
-            --text-color: #431b6f; /* بنفسجي للنصوص */
-            --text-light: #6B4F8C; /* بنفسجي فاتح للنصوص الثانوية */
+            --light-gray: #F9F7F0;
+            --text-color: #431b6f;
+            --text-light: #6B4F8C;
             --border-color: #E8E4D5;
             --gradient-primary: linear-gradient(135deg, #AC8A3C 0%, #8B6F2A 100%);
             --gradient-light: linear-gradient(135deg, #F9F7F0 0%, #E8E4D5 100%);
-            --gradient-purple: linear-gradient(135deg, #431b6f 0%, #5D2A9A 100%); /* تدرج بنفسجي */
+            --gradient-purple: linear-gradient(135deg, #431b6f 0%, #5D2A9A 100%);
+            --shadow-light: 0 8px 20px rgba(67, 27, 111, 0.03);
+            --shadow-medium: 0 15px 30px rgba(67, 27, 111, 0.08);
         }
         
         body {
@@ -47,9 +48,8 @@
             width: 100%;
         }
         
-        /* الهيدر المصغر للجوال */
         .navbar {
-            background: linear-gradient(135deg, #431b6f 0%, #5D2A9A 100%); /* تدرج بنفسجي */
+            background: var(--gradient-purple);
             color: white;
             position: sticky;
             top: 0;
@@ -57,8 +57,8 @@
             box-shadow: 0 4px 20px rgba(67, 27, 111, 0.2);
             height: auto;
             min-height: 70px;
-            border-bottom: none;
             padding: 0;
+            transition: transform 0.3s ease;
         }
         
         .nav-container {
@@ -94,6 +94,7 @@
             border: 2px solid rgba(255, 255, 255, 0.3);
             position: relative;
             overflow: hidden;
+            animation: pulse 2s infinite;
         }
         
         .logo-icon i {
@@ -123,7 +124,6 @@
             font-weight: 400;
         }
         
-        /* شريط الأيقونات المصغر */
         .nav-icons-container {
             background: rgba(255, 255, 255, 0.15);
             border-radius: 15px;
@@ -193,7 +193,6 @@
             z-index: 1;
         }
         
-        /* المحتوى الرئيسي المعدّل للجوال */
         .main-content {
             background: var(--card-bg);
             border-radius: 25px;
@@ -251,7 +250,7 @@
             border-radius: 2px;
         }
         
-        /* قسم نبذة عني للجوال */
+        /* About Section */
         .about-section {
             max-width: 100%;
             margin: 0 auto;
@@ -262,10 +261,7 @@
             border-radius: 20px;
             padding: 30px 25px;
             margin-bottom: 30px;
-            border-left: none;
-            box-shadow: 
-                0 15px 30px rgba(67, 27, 111, 0.05),
-                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            box-shadow: var(--shadow-medium);
             animation: fadeIn 0.5s ease;
             position: relative;
             overflow: hidden;
@@ -297,6 +293,7 @@
                 0 10px 30px rgba(67, 27, 111, 0.2),
                 inset 0 3px 6px rgba(255, 255, 255, 0.3);
             border: 4px solid rgba(255, 255, 255, 0.5);
+            animation: floating 3s ease-in-out infinite;
         }
         
         .about-info h3 {
@@ -331,15 +328,14 @@
             background: var(--light-gray);
             border-radius: 18px;
             padding: 25px;
-            border-top: none;
-            box-shadow: 0 8px 20px rgba(67, 27, 111, 0.03);
+            box-shadow: var(--shadow-light);
             border: 1px solid rgba(232, 228, 213, 0.8);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         
         .detail-item:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(67, 27, 111, 0.08);
+            box-shadow: var(--shadow-medium);
         }
         
         .detail-item h4 {
@@ -372,97 +368,131 @@
             font-size: 1.05rem;
         }
         
-        /* قسم الشواهد الوظيفية */
+        /* Certificates Section */
         .certificates-section {
             max-width: 100%;
             margin: 0 auto;
         }
         
-        .certificates-card {
+        .certificates-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+            margin-top: 20px;
+        }
+        
+        .certificate-item {
             background: var(--card-bg);
-            border-radius: 20px;
-            padding: 50px 30px;
-            margin-bottom: 30px;
-            text-align: center;
-            border: 2px dashed rgba(67, 27, 111, 0.3);
-            box-shadow: 
-                0 15px 30px rgba(67, 27, 111, 0.05),
-                inset 0 1px 0 rgba(255, 255, 255, 0.8);
-            animation: fadeIn 0.5s ease;
-            position: relative;
-            overflow: hidden;
+            border-radius: 18px;
+            padding: 25px;
+            border: 1px solid rgba(232, 228, 213, 0.8);
+            box-shadow: var(--shadow-light);
+            transition: transform 0.3s ease;
         }
         
-        .certificates-content {
+        .certificate-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .certificate-header {
             display: flex;
-            flex-direction: column;
+            justify-content: space-between;
             align-items: center;
-            justify-content: center;
-            gap: 35px;
-        }
-        
-        .hourglass-container {
-            position: relative;
-            width: 140px;
-            height: 140px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .hourglass {
-            font-size: 4.5rem;
-            color: var(--secondary-color);
-            animation: hourglassRotate 3s infinite ease-in-out;
-        }
-        
-        @keyframes hourglassRotate {
-            0% { transform: rotate(0deg); }
-            25% { transform: rotate(90deg); }
-            50% { transform: rotate(180deg); }
-            75% { transform: rotate(270deg); }
-            100% { transform: rotate(360deg); }
-        }
-        
-        .hourglass-shadow {
-            position: absolute;
-            bottom: -10px;
-            width: 100px;
-            height: 20px;
-            background: rgba(67, 27, 111, 0.1);
-            border-radius: 50%;
-            filter: blur(8px);
-            animation: shadowPulse 3s infinite ease-in-out;
-        }
-        
-        @keyframes shadowPulse {
-            0%, 100% { width: 100px; opacity: 0.1; }
-            50% { width: 110px; opacity: 0.2; }
-        }
-        
-        .certificates-text {
-            text-align: center;
-        }
-        
-        .certificates-text h3 {
-            color: var(--secondary-color);
             margin-bottom: 20px;
-            font-size: 2rem;
-            font-weight: 800;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(232, 228, 213, 0.8);
         }
         
-        .certificates-text p {
+        .certificate-header h3 {
             color: var(--secondary-color);
             font-size: 1.4rem;
             font-weight: 700;
-            line-height: 1.5;
-            background: var(--light-gray);
-            padding: 20px 25px;
-            border-radius: 15px;
-            border: 1px solid rgba(232, 228, 213, 0.8);
         }
         
-        /* المقدمة - للجوال */
+        .certificate-actions {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .pdf-action-btn {
+            background: var(--gradient-purple);
+            color: white;
+            border: none;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .pdf-action-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 10px rgba(67, 27, 111, 0.3);
+        }
+        
+        .pdf-viewer {
+            width: 100%;
+            height: 500px;
+            border-radius: 12px;
+            border: 1px solid rgba(232, 228, 213, 0.8);
+            overflow: hidden;
+            background: #f9f9f9;
+        }
+        
+        .pdf-viewer iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Courses Section */
+        .courses-section {
+            max-width: 100%;
+            margin: 0 auto;
+        }
+        
+        .courses-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+            margin-top: 20px;
+        }
+        
+        .course-item {
+            background: var(--card-bg);
+            border-radius: 18px;
+            padding: 25px;
+            border: 1px solid rgba(232, 228, 213, 0.8);
+            box-shadow: var(--shadow-light);
+            transition: transform 0.3s ease;
+        }
+        
+        .course-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .course-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(232, 228, 213, 0.8);
+        }
+        
+        .course-header h3 {
+            color: var(--secondary-color);
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+        
+        /* Intro Section */
         .intro-section {
             max-width: 100%;
             margin: 0 auto;
@@ -473,15 +503,14 @@
             border-radius: 18px;
             padding: 25px;
             margin-bottom: 25px;
-            border-right: none;
-            box-shadow: 0 8px 20px rgba(67, 27, 111, 0.03);
+            box-shadow: var(--shadow-light);
             border: 1px solid rgba(232, 228, 213, 0.8);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         
         .intro-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(67, 27, 111, 0.08);
+            box-shadow: var(--shadow-medium);
         }
         
         .intro-card h3 {
@@ -517,7 +546,7 @@
             font-size: 1.05rem;
         }
         
-        /* السيرة المهنية المختصرة للجوال */
+        /* Bio Section */
         .bio-grid {
             display: flex;
             flex-direction: column;
@@ -538,7 +567,7 @@
         
         .bio-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(67, 27, 111, 0.08);
+            box-shadow: var(--shadow-medium);
         }
         
         .bio-card::before {
@@ -580,7 +609,7 @@
             line-height: 1.7;
         }
         
-        /* التخطيط للتدريس للجوال */
+        /* Planning Section */
         .planning-grid {
             display: flex;
             flex-direction: column;
@@ -592,15 +621,14 @@
             background: var(--light-gray);
             border-radius: 18px;
             padding: 25px;
-            border-top: none;
-            box-shadow: 0 8px 20px rgba(67, 27, 111, 0.03);
+            box-shadow: var(--shadow-light);
             border: 1px solid rgba(232, 228, 213, 0.8);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         
         .plan-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(67, 27, 111, 0.08);
+            box-shadow: var(--shadow-medium);
         }
         
         .plan-card h4 {
@@ -653,7 +681,7 @@
             top: 10px;
         }
         
-        /* استراتيجيات التدريس للجوال */
+        /* Strategies Section */
         .strategy-container {
             display: flex;
             flex-direction: column;
@@ -673,7 +701,7 @@
         
         .strategy-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(67, 27, 111, 0.08);
+            box-shadow: var(--shadow-medium);
         }
         
         .strategy-card::before {
@@ -718,7 +746,7 @@
             line-height: 1.7;
         }
         
-        /* التقنية والمبادرات للجوال */
+        /* Tech Section */
         .tech-grid {
             display: flex;
             flex-direction: column;
@@ -730,15 +758,14 @@
             background: var(--light-gray);
             border-radius: 18px;
             padding: 25px;
-            border-left: none;
-            box-shadow: 0 8px 20px rgba(67, 27, 111, 0.03);
+            box-shadow: var(--shadow-light);
             border: 1px solid rgba(232, 228, 213, 0.8);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         
         .tech-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(67, 27, 111, 0.08);
+            box-shadow: var(--shadow-medium);
         }
         
         .tech-card h4 {
@@ -775,7 +802,7 @@
             font-size: 1.2rem;
         }
         
-        /* التعلم الذاتي للجوال */
+        /* Self Learning Section */
         .self-learning {
             display: flex;
             flex-direction: column;
@@ -793,7 +820,7 @@
         
         .learning-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(67, 27, 111, 0.08);
+            box-shadow: var(--shadow-medium);
         }
         
         .learning-card h4 {
@@ -828,7 +855,7 @@
             font-size: 1.05rem;
         }
         
-        /* التقييم الذاتي للجوال */
+        /* Assessment Section */
         .assessment-container {
             display: flex;
             flex-direction: column;
@@ -840,27 +867,26 @@
             background: var(--light-gray);
             border-radius: 18px;
             padding: 25px;
-            border-top: none;
-            box-shadow: 0 8px 20px rgba(67, 27, 111, 0.03);
+            box-shadow: var(--shadow-light);
             border: 1px solid rgba(232, 228, 213, 0.8);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         
         .assessment-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(67, 27, 111, 0.08);
+            box-shadow: var(--shadow-medium);
         }
         
         .strength {
-            border-top: 4px solid #8A4FBF; /* بنفسجي متوسط */
+            border-top: 4px solid #8A4FBF;
         }
         
         .improvement {
-            border-top: 4px solid #B86CF5; /* بنفسجي فاتح */
+            border-top: 4px solid #B86CF5;
         }
         
         .plan {
-            border-top: 4px solid #431b6f; /* بنفسجي غامق */
+            border-top: 4px solid #431b6f;
         }
         
         .assessment-card h4 {
@@ -913,7 +939,7 @@
             font-size: 1.8rem;
         }
         
-        /* الخاتمة للجوال */
+        /* Conclusion Section */
         .conclusion-card {
             background: var(--card-bg);
             border-radius: 20px;
@@ -952,7 +978,7 @@
             text-align: right;
         }
         
-        /* تذييل الصفحة للجوال */
+        /* Footer */
         .footer {
             text-align: center;
             padding: 25px 20px;
@@ -964,10 +990,34 @@
             border-radius: 15px;
             margin-bottom: 20px;
             line-height: 1.6;
-            box-shadow: 0 8px 20px rgba(67, 27, 111, 0.03);
+            box-shadow: var(--shadow-light);
         }
         
-        /* تحسينات للشاشات المتوسطة والكبيرة */
+        /* Animations */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .fade-in-element {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        
+        .fade-in-element.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Responsive Design */
         @media (min-width: 576px) {
             .container {
                 padding: 0 25px;
@@ -1004,6 +1054,11 @@
             
             .about-info h3 {
                 font-size: 2rem;
+            }
+            
+            .certificates-grid,
+            .courses-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
         
@@ -1088,6 +1143,11 @@
                 grid-template-columns: repeat(2, 1fr);
                 gap: 30px;
             }
+            
+            .certificates-grid,
+            .courses-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
         
         @media (min-width: 992px) {
@@ -1127,6 +1187,11 @@
             .assessment-container {
                 grid-template-columns: repeat(3, 1fr);
             }
+            
+            .certificates-grid,
+            .courses-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
         
         @media (min-width: 1200px) {
@@ -1144,6 +1209,11 @@
             
             .strategy-container {
                 grid-template-columns: repeat(4, 1fr);
+            }
+            
+            .certificates-grid,
+            .courses-grid {
+                grid-template-columns: repeat(3, 1fr);
             }
         }
         
@@ -1186,48 +1256,13 @@
             .nav-icon span {
                 font-size: 0.6rem;
             }
+            
+            .pdf-viewer {
+                height: 300px;
+            }
         }
         
-        .nav-icon:active {
-            transform: scale(0.95);
-            transition: transform 0.1s ease;
-        }
-        
-        input, select, textarea {
-            font-size: 16px;
-        }
-        
-        .fade-in-element {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.5s ease, transform 0.5s ease;
-        }
-        
-        .fade-in-element.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-        
-        .pulse {
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes floating {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-5px); }
-            100% { transform: translateY(0px); }
-        }
-        
-        .floating {
-            animation: floating 3s ease-in-out infinite;
-        }
-        
+        /* Utility Classes */
         .no-select {
             -webkit-touch-callout: none;
             -webkit-user-select: none;
@@ -1240,19 +1275,13 @@
         * {
             -webkit-overflow-scrolling: touch;
         }
-        
-        @supports (-webkit-touch-callout: none) {
-            .navbar {
-                position: -webkit-sticky;
-            }
-        }
     </style>
 </head>
 <body class="no-select">
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo">
-                <div class="logo-icon pulse">
+                <div class="logo-icon">
                     <i class="fas fa-chalkboard-teacher"></i>
                 </div>
                 <div class="logo-text">
@@ -1282,6 +1311,10 @@
                     <a href="#" class="nav-icon" data-target="certificates">
                         <i class="fas fa-certificate"></i>
                         <span>الشواهد</span>
+                    </a>
+                    <a href="#" class="nav-icon" data-target="courses">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>الدورات</span>
                     </a>
                     <a href="#" class="nav-icon" data-target="strategies">
                         <i class="fas fa-chalkboard"></i>
@@ -1327,7 +1360,7 @@
                 <div class="about-section">
                     <div class="about-card">
                         <div class="about-header">
-                            <div class="avatar floating">
+                            <div class="avatar">
                                 <i class="fas fa-chalkboard-teacher"></i>
                             </div>
                             <div class="about-info">
@@ -1449,21 +1482,96 @@
             <section id="certificates" class="section">
                 <h2 class="section-title">الشواهد الوظيفية</h2>
                 <div class="certificates-section">
-                    <div class="certificates-card">
-                        <div class="certificates-content">
-                            <div class="hourglass-container">
-                                <div class="hourglass">
-                                    <i class="fas fa-hourglass-half"></i>
+                    <div class="certificates-grid">
+                        <div class="certificate-item fade-in-element">
+                            <div class="certificate-header">
+                                <h3>ملف الخطط العلاجية</h3>
+                                <div class="certificate-actions">
+                                    <a href="https://drive.google.com/file/d/1fq66Do1rcTUCRFAevBp-_PXc0lfpFoNl/view?usp=drivesdk" target="_blank" class="pdf-action-btn" title="فتح في نافذة جديدة">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                    <a href="https://drive.google.com/file/d/1fq66Do1rcTUCRFAevBp-_PXc0lfpFoNl/view?usp=drivesdk" download class="pdf-action-btn" title="تحميل الملف">
+                                        <i class="fas fa-download"></i>
+                                    </a>
                                 </div>
-                                <div class="hourglass-shadow"></div>
                             </div>
-                            <div class="certificates-text">
-                                <h3>الشواهد والتقديرات الوظيفية</h3>
-                                <p>سيتم إضافة جميع الشواهد الوظيفية قريباً</p>
-                                <p style="margin-top: 20px; color: var(--secondary-color); font-size: 1rem;">
-                                    <i class="fas fa-spinner fa-spin" style="margin-left: 5px;"></i>
-                                    جاري تحديث المحتوى
-                                </p>
+                            <div class="pdf-viewer">
+                                <iframe src="https://drive.google.com/file/d/1fq66Do1rcTUCRFAevBp-_PXc0lfpFoNl/preview" allow="autoplay"></iframe>
+                            </div>
+                        </div>
+                        
+                        <div class="certificate-item fade-in-element">
+                            <div class="certificate-header">
+                                <h3>رفع الحد الأدنى من المهارات</h3>
+                                <div class="certificate-actions">
+                                    <a href="https://drive.google.com/file/d/1AbGGbzLThaQLP_MTu-UWOPGXT9PrOA-T/view?usp=drivesdk" target="_blank" class="pdf-action-btn" title="فتح في نافذة جديدة">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                    <a href="https://drive.google.com/file/d/1AbGGbzLThaQLP_MTu-UWOPGXT9PrOA-T/view?usp=drivesdk" download class="pdf-action-btn" title="تحميل الملف">
+                                        <i class="fas fa-download"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="pdf-viewer">
+                                <iframe src="https://drive.google.com/file/d/1AbGGbzLThaQLP_MTu-UWOPGXT9PrOA-T/preview" allow="autoplay"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="courses" class="section">
+                <h2 class="section-title">الدورات التربوية</h2>
+                <div class="courses-section">
+                    <div class="courses-grid">
+                        <div class="course-item fade-in-element">
+                            <div class="course-header">
+                                <h3>دورة شهادة القياس والتقويم التربوي</h3>
+                                <div class="certificate-actions">
+                                    <a href="https://drive.google.com/file/d/1Px7knwhc94ZVEtk1ZWzbS3B94w8OvAEJ/view?usp=drivesdk" target="_blank" class="pdf-action-btn" title="فتح في نافذة جديدة">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                    <a href="https://drive.google.com/file/d/1Px7knwhc94ZVEtk1ZWzbS3B94w8OvAEJ/view?usp=drivesdk" download class="pdf-action-btn" title="تحميل الملف">
+                                        <i class="fas fa-download"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="pdf-viewer">
+                                <iframe src="https://drive.google.com/file/d/1Px7knwhc94ZVEtk1ZWzbS3B94w8OvAEJ/preview" allow="autoplay"></iframe>
+                            </div>
+                        </div>
+                        
+                        <div class="course-item fade-in-element">
+                            <div class="course-header">
+                                <h3>دورة ممارسات فاعلة لمعلم المستقبل</h3>
+                                <div class="certificate-actions">
+                                    <a href="https://drive.google.com/file/d/1MYEG2jP1eXg00CaQe0fjsuiq2q6h2v-a/view?usp=drivesdk" target="_blank" class="pdf-action-btn" title="فتح في نافذة جديدة">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                    <a href="https://drive.google.com/file/d/1MYEG2jP1eXg00CaQe0fjsuiq2q6h2v-a/view?usp=drivesdk" download class="pdf-action-btn" title="تحميل الملف">
+                                        <i class="fas fa-download"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="pdf-viewer">
+                                <iframe src="https://drive.google.com/file/d/1MYEG2jP1eXg00CaQe0fjsuiq2q6h2v-a/preview" allow="autoplay"></iframe>
+                            </div>
+                        </div>
+                        
+                        <div class="course-item fade-in-element">
+                            <div class="course-header">
+                                <h3>مهارات تنفيذ التدريس في مدارس الطفولة المبكرة</h3>
+                                <div class="certificate-actions">
+                                    <a href="https://drive.google.com/file/d/1jIqEawrZGQepy6L85yhI3jrlX8at_ngN/view?usp=drivesdk" target="_blank" class="pdf-action-btn" title="فتح في نافذة جديدة">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                    <a href="https://drive.google.com/file/d/1jIqEawrZGQepy6L85yhI3jrlX8at_ngN/view?usp=drivesdk" download class="pdf-action-btn" title="تحميل الملف">
+                                        <i class="fas fa-download"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="pdf-viewer">
+                                <iframe src="https://drive.google.com/file/d/1jIqEawrZGQepy6L85yhI3jrlX8at_ngN/preview" allow="autoplay"></iframe>
                             </div>
                         </div>
                     </div>
