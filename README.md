@@ -15,20 +15,23 @@
         }
         
         :root {
-            --primary-color: #AC8A3C;
-            --secondary-color: #431b6f;
-            --accent-color: #5D2A9A;
-            --background-color: #F8F5E6;
+            --primary-color: #9C7C3C;
+            --secondary-color: #2C1A5E;
+            --accent-color: #C19A5F;
+            --background-color: #F5F3EF;
             --card-bg: #FFFFFF;
-            --light-gray: #F9F7F0;
-            --text-color: #431b6f;
-            --text-light: #6B4F8C;
-            --border-color: #E8E4D5;
-            --gradient-primary: linear-gradient(135deg, #AC8A3C 0%, #8B6F2A 100%);
-            --gradient-light: linear-gradient(135deg, #F9F7F0 0%, #E8E4D5 100%);
-            --gradient-purple: linear-gradient(135deg, #431b6f 0%, #5D2A9A 100%);
-            --shadow-light: 0 8px 20px rgba(67, 27, 111, 0.03);
-            --shadow-medium: 0 15px 30px rgba(67, 27, 111, 0.08);
+            --light-gray: #F9F7F2;
+            --text-color: #2C1A5E;
+            --text-light: #6B5B95;
+            --border-color: #E5DFD3;
+            --gradient-gold: linear-gradient(135deg, #9C7C3C 0%, #C19A5F 100%);
+            --gradient-purple: linear-gradient(135deg, #2C1A5E 0%, #4A2C8C 100%);
+            --gradient-light: linear-gradient(135deg, #F9F7F2 0%, #F5F3EF 100%);
+            --shadow-light: 0 5px 15px rgba(44, 26, 94, 0.08);
+            --shadow-medium: 0 10px 25px rgba(44, 26, 94, 0.12);
+            --shadow-heavy: 0 15px 35px rgba(44, 26, 94, 0.15);
+            --gold-light: #F2E9D8;
+            --purple-light: #F0EDF8;
         }
         
         body {
@@ -48,17 +51,19 @@
             width: 100%;
         }
         
+        /* تحسين الهيدر - تكبير اسم المعلمة وتصغير العنوان */
         .navbar {
             background: var(--gradient-purple);
             color: white;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 20px rgba(67, 27, 111, 0.2);
+            box-shadow: var(--shadow-heavy);
             height: auto;
-            min-height: 70px;
+            min-height: 80px;
             padding: 0;
             transition: transform 0.3s ease;
+            border-bottom: 3px solid var(--accent-color);
         }
         
         .nav-container {
@@ -82,23 +87,23 @@
         }
         
         .logo-icon {
-            background: var(--gradient-purple);
-            width: 50px;
-            height: 50px;
-            min-width: 50px;
+            background: var(--gradient-gold);
+            width: 55px;
+            height: 55px;
+            min-width: 55px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 6px 20px rgba(67, 27, 111, 0.3);
-            border: 2px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 6px 20px rgba(156, 124, 60, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.4);
             position: relative;
             overflow: hidden;
-            animation: pulse 2s infinite;
+            animation: pulse 3s infinite;
         }
         
         .logo-icon i {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             z-index: 1;
             color: white;
         }
@@ -110,28 +115,32 @@
         }
         
         .logo-title {
-            font-size: 1.4rem;
+            font-size: 1.2rem; /* تصغير حجم عنوان "ملف الإنجاز المهني" */
             color: white;
-            font-weight: 700;
+            font-weight: 600; /* جعله أقل سماكة */
             line-height: 1.3;
             letter-spacing: -0.3px;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+            margin-bottom: 3px; /* إضافة مسافة صغيرة بين السطرين */
         }
         
         .logo-subtitle {
-            font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.9);
-            margin-top: 4px;
-            font-weight: 400;
+            font-size: 1.5rem; /* تكبير اسم المعلمة "سارة الخالدي" */
+            color: white;
+            margin-top: 0; /* إزالة المسافة العلوية */
+            font-weight: 700; /* جعله أكثر وضوحاً */
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
         
         .nav-icons-container {
-            background: rgba(255, 255, 255, 0.15);
-            border-radius: 15px;
-            padding: 8px;
+            background: rgba(255, 255, 255, 0.12);
+            border-radius: 18px;
+            padding: 10px;
             width: 100%;
             overflow: hidden;
             max-width: 100%;
             border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
         }
         
         .nav-icons {
@@ -159,51 +168,51 @@
             text-decoration: none;
             color: white;
             border-radius: 12px;
-            min-width: 65px;
-            height: 45px;
+            min-width: 70px;
+            height: 50px;
             position: relative;
             overflow: hidden;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.08);
             flex-shrink: 0;
             touch-action: manipulation;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.15);
         }
         
         .nav-icon:hover, .nav-icon.active {
-            background: rgba(255, 255, 255, 0.25);
+            background: rgba(255, 255, 255, 0.2);
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.15);
         }
         
         .nav-icon.active {
-            background: rgba(255, 255, 255, 0.3);
-            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.25);
+            background: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 5px 18px rgba(255, 255, 255, 0.2);
+            border-color: var(--accent-color);
         }
         
         .nav-icon i {
-            font-size: 1rem;
+            font-size: 1.1rem;
             margin-bottom: 3px;
             z-index: 1;
         }
         
         .nav-icon span {
-            font-size: 0.65rem;
-            font-weight: 500;
+            font-size: 0.7rem;
+            font-weight: 600;
             white-space: nowrap;
             z-index: 1;
         }
         
+        /* تصميم المحتوى الرئيسي */
         .main-content {
             background: var(--card-bg);
             border-radius: 25px;
-            box-shadow: 
-                0 15px 35px rgba(67, 27, 111, 0.08),
-                inset 0 1px 0 rgba(255, 255, 255, 0.8);
-            margin-top: 20px;
+            box-shadow: var(--shadow-heavy);
+            margin-top: 25px;
             margin-bottom: 30px;
-            padding: 30px 25px;
+            padding: 35px 30px;
             min-height: auto;
-            border: 1px solid rgba(232, 228, 213, 0.8);
+            border: 1px solid rgba(232, 228, 213, 0.5);
             position: relative;
             overflow: hidden;
         }
@@ -229,28 +238,134 @@
         
         .section-title {
             color: var(--secondary-color);
-            margin-bottom: 30px;
+            margin-bottom: 35px;
             padding-bottom: 20px;
-            border-bottom: 2px solid rgba(67, 27, 111, 0.1);
+            border-bottom: 2px solid rgba(44, 26, 94, 0.1);
             position: relative;
-            font-size: 1.8rem;
+            font-size: 1.9rem;
             font-weight: 800;
             line-height: 1.3;
             letter-spacing: -0.5px;
+            text-align: center;
         }
         
         .section-title::after {
             content: '';
             position: absolute;
             bottom: -2px;
-            right: 0;
-            width: 100px;
+            right: 50%;
+            transform: translateX(50%);
+            width: 120px;
             height: 4px;
-            background: var(--gradient-purple);
+            background: var(--gradient-gold);
             border-radius: 2px;
         }
         
-        /* About Section */
+        /* تصميم قسم الدورات التربوية المحدث */
+        .courses-section {
+            max-width: 100%;
+            margin: 0 auto;
+        }
+        
+        .courses-description {
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--text-light);
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin-right: auto;
+            margin-left: auto;
+            line-height: 1.7;
+        }
+        
+        .certificate-cards {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        .certificate-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-heavy);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(232, 228, 213, 0.8);
+            position: relative;
+        }
+        
+        .certificate-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(44, 26, 94, 0.2);
+        }
+        
+        .certificate-header {
+            background: var(--gradient-purple);
+            color: white;
+            padding: 20px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid var(--accent-color);
+        }
+        
+        .certificate-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+        
+        .download-btn-container {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .download-btn {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            backdrop-filter: blur(5px);
+            font-weight: 600;
+            font-size: 0.9rem;
+            gap: 8px;
+        }
+        
+        .download-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.05);
+        }
+        
+        .certificate-image-container {
+            width: 100%;
+            padding: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(45deg, #f8f6f1, #f5f2ec);
+        }
+        
+        .certificate-image {
+            max-width: 100%;
+            max-height: 500px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(193, 154, 95, 0.3);
+            transition: transform 0.3s ease;
+        }
+        
+        .certificate-image:hover {
+            transform: scale(1.02);
+        }
+        
+        /* تصميم بقية الأقسام */
         .about-section {
             max-width: 100%;
             margin: 0 auto;
@@ -258,14 +373,24 @@
         
         .about-card {
             background: var(--card-bg);
-            border-radius: 20px;
-            padding: 30px 25px;
+            border-radius: 22px;
+            padding: 35px 30px;
             margin-bottom: 30px;
             box-shadow: var(--shadow-medium);
             animation: fadeIn 0.5s ease;
             position: relative;
             overflow: hidden;
-            border: 1px solid rgba(232, 228, 213, 0.8);
+            border: 1px solid rgba(232, 228, 213, 0.5);
+        }
+        
+        .about-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient-gold);
         }
         
         .about-header {
@@ -280,26 +405,26 @@
         }
         
         .avatar {
-            width: 140px;
-            height: 140px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
             background: var(--gradient-purple);
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 3.5rem;
+            font-size: 3.8rem;
             box-shadow: 
-                0 10px 30px rgba(67, 27, 111, 0.2),
+                0 10px 30px rgba(44, 26, 94, 0.2),
                 inset 0 3px 6px rgba(255, 255, 255, 0.3);
-            border: 4px solid rgba(255, 255, 255, 0.5);
-            animation: floating 3s ease-in-out infinite;
+            border: 4px solid var(--accent-color);
+            animation: floating 4s ease-in-out infinite;
         }
         
         .about-info h3 {
             color: var(--secondary-color);
             margin-bottom: 15px;
-            font-size: 1.8rem;
+            font-size: 2rem;
             font-weight: 800;
             line-height: 1.3;
             letter-spacing: -0.5px;
@@ -309,11 +434,11 @@
             color: var(--text-color);
             line-height: 1.7;
             margin-bottom: 12px;
-            font-size: 1.05rem;
+            font-size: 1.1rem;
         }
         
         .highlight {
-            color: var(--secondary-color);
+            color: var(--primary-color);
             font-weight: 700;
         }
         
@@ -325,12 +450,14 @@
         }
         
         .detail-item {
-            background: var(--light-gray);
+            background: var(--gold-light);
             border-radius: 18px;
             padding: 25px;
             box-shadow: var(--shadow-light);
-            border: 1px solid rgba(232, 228, 213, 0.8);
+            border: 1px solid rgba(232, 228, 213, 0.5);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
         
         .detail-item:hover {
@@ -351,15 +478,15 @@
         .detail-item h4 i {
             color: white;
             background: var(--gradient-purple);
-            width: 40px;
-            height: 40px;
-            min-width: 40px;
+            width: 42px;
+            height: 42px;
+            min-width: 42px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.2rem;
-            box-shadow: 0 4px 10px rgba(67, 27, 111, 0.3);
+            box-shadow: 0 4px 10px rgba(44, 26, 94, 0.3);
         }
         
         .detail-item p {
@@ -368,7 +495,7 @@
             font-size: 1.05rem;
         }
         
-        /* Certificates Section */
+        /* تصميم قسم الشواهد */
         .certificates-section {
             max-width: 100%;
             margin: 0 auto;
@@ -386,16 +513,19 @@
             border-radius: 18px;
             padding: 25px;
             border: 1px solid rgba(232, 228, 213, 0.8);
-            box-shadow: var(--shadow-light);
+            box-shadow: var(--shadow-medium);
             transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border-top: 4px solid var(--primary-color);
         }
         
         .certificate-item:hover {
             transform: translateY(-5px);
-            box-shadow: var(--shadow-medium);
+            box-shadow: var(--shadow-heavy);
         }
         
-        .certificate-header {
+        .certificate-header-pdf {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -404,7 +534,7 @@
             border-bottom: 1px solid rgba(232, 228, 213, 0.8);
         }
         
-        .certificate-header h3 {
+        .certificate-header-pdf h3 {
             color: var(--secondary-color);
             font-size: 1.4rem;
             font-weight: 700;
@@ -419,8 +549,8 @@
             background: var(--gradient-purple);
             color: white;
             border: none;
-            width: 36px;
-            height: 36px;
+            width: 38px;
+            height: 38px;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -428,11 +558,12 @@
             cursor: pointer;
             transition: all 0.3s ease;
             text-decoration: none;
+            box-shadow: 0 4px 8px rgba(44, 26, 94, 0.2);
         }
         
         .pdf-action-btn:hover {
             transform: scale(1.1);
-            box-shadow: 0 4px 10px rgba(67, 27, 111, 0.3);
+            box-shadow: 0 6px 12px rgba(44, 26, 94, 0.3);
         }
         
         .pdf-viewer {
@@ -450,372 +581,335 @@
             border: none;
         }
         
-        /* Courses Section */
-        .courses-section {
+        /* تصميم الأقسام الأخرى */
+        .intro-section, .planning-grid, .bio-grid, .strategy-container,
+        .tech-grid, .self-learning, .assessment-container {
             max-width: 100%;
             margin: 0 auto;
         }
         
-        .courses-grid {
+        /* تصميم قسم التقويم */
+        .evaluation-section {
+            max-width: 100%;
+            margin: 0 auto;
+        }
+        
+        .evaluation-card {
+            background: var(--purple-light);
+            border-radius: 18px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow-light);
+            border: 1px solid rgba(232, 228, 213, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .evaluation-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .evaluation-card h3 {
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            font-size: 1.5rem;
+            line-height: 1.3;
+            font-weight: 700;
+        }
+        
+        .evaluation-card h3 i {
+            color: white;
+            background: var(--gradient-purple);
+            width: 48px;
+            height: 48px;
+            min-width: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            box-shadow: 0 4px 10px rgba(44, 26, 94, 0.3);
+            margin-top: 2px;
+        }
+        
+        .evaluation-card p {
+            color: var(--text-color);
+            line-height: 1.8;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            text-align: justify;
+        }
+        
+        .evaluation-grid {
             display: grid;
             grid-template-columns: 1fr;
             gap: 25px;
-            margin-top: 20px;
-        }
-        
-        .course-item {
-            background: var(--card-bg);
-            border-radius: 18px;
-            padding: 25px;
-            border: 1px solid rgba(232, 228, 213, 0.8);
-            box-shadow: var(--shadow-light);
-            transition: transform 0.3s ease;
-        }
-        
-        .course-item:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-medium);
-        }
-        
-        .course-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid rgba(232, 228, 213, 0.8);
-        }
-        
-        .course-header h3 {
-            color: var(--secondary-color);
-            font-size: 1.4rem;
-            font-weight: 700;
-        }
-        
-        /* Intro Section */
-        .intro-section {
-            max-width: 100%;
-            margin: 0 auto;
-        }
-        
-        .intro-card {
-            background: var(--card-bg);
-            border-radius: 18px;
-            padding: 25px;
-            margin-bottom: 25px;
-            box-shadow: var(--shadow-light);
-            border: 1px solid rgba(232, 228, 213, 0.8);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .intro-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-medium);
-        }
-        
-        .intro-card h3 {
-            color: var(--secondary-color);
-            margin-bottom: 20px;
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-            font-size: 1.4rem;
-            line-height: 1.3;
-            font-weight: 700;
-        }
-        
-        .intro-card h3 i {
-            color: white;
-            background: var(--gradient-purple);
-            width: 45px;
-            height: 45px;
-            min-width: 45px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            box-shadow: 0 4px 10px rgba(67, 27, 111, 0.3);
-            margin-top: 2px;
-        }
-        
-        .intro-card p {
-            color: var(--text-color);
-            line-height: 1.7;
-            margin-bottom: 15px;
-            font-size: 1.05rem;
-        }
-        
-        /* Bio Section */
-        .bio-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
             margin-top: 30px;
         }
         
-        .bio-card {
-            background: var(--light-gray);
-            border-radius: 18px;
+        .evaluation-item {
+            background: white;
+            border-radius: 16px;
             padding: 25px;
-            border: 1px solid rgba(232, 228, 213, 0.8);
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 4px solid var(--accent-color);
+            box-shadow: var(--shadow-light);
+            transition: all 0.3s ease;
         }
         
-        .bio-card:hover {
+        .evaluation-item:hover {
             transform: translateY(-5px);
             box-shadow: var(--shadow-medium);
         }
         
-        .bio-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: var(--gradient-purple);
-        }
-        
-        .bio-card i {
-            font-size: 2.8rem;
-            color: var(--secondary-color);
-            margin-bottom: 20px;
-            background: rgba(249, 247, 240, 0.8);
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-left: auto;
-            margin-right: auto;
-            border: 2px solid rgba(232, 228, 213, 0.8);
-        }
-        
-        .bio-card h4 {
+        .evaluation-item h4 {
             color: var(--secondary-color);
             margin-bottom: 15px;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             font-weight: 700;
         }
         
-        .bio-card p {
-            color: var(--text-color);
-            font-size: 1.05rem;
-            line-height: 1.7;
-        }
-        
-        /* Planning Section */
-        .planning-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-            margin-top: 30px;
-        }
-        
-        .plan-card {
-            background: var(--light-gray);
-            border-radius: 18px;
-            padding: 25px;
-            box-shadow: var(--shadow-light);
-            border: 1px solid rgba(232, 228, 213, 0.8);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .plan-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-medium);
-        }
-        
-        .plan-card h4 {
-            color: var(--secondary-color);
-            margin-bottom: 20px;
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-            font-size: 1.4rem;
-            line-height: 1.3;
-            font-weight: 700;
-        }
-        
-        .plan-card h4 i {
-            color: white;
-            background: var(--gradient-purple);
-            width: 45px;
-            height: 45px;
-            min-width: 45px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            box-shadow: 0 4px 10px rgba(67, 27, 111, 0.3);
-            margin-top: 2px;
-        }
-        
-        .plan-card ul {
+        .evaluation-item ul {
             list-style-type: none;
-            padding-right: 15px;
+            padding-right: 0;
         }
         
-        .plan-card li {
-            padding: 12px 0;
-            border-bottom: 1px solid rgba(232, 228, 213, 0.8);
+        .evaluation-item li {
+            padding: 10px 0;
+            color: var(--text-color);
             position: relative;
             padding-right: 30px;
-            color: var(--text-color);
             font-size: 1.05rem;
             line-height: 1.6;
+            border-bottom: 1px solid rgba(232, 228, 213, 0.5);
         }
         
-        .plan-card li:before {
-            content: "•";
-            color: var(--secondary-color);
-            font-size: 1.8rem;
+        .evaluation-item li:before {
+            content: "✓";
+            color: var(--primary-color);
             position: absolute;
             right: 0;
             top: 10px;
-        }
-        
-        /* Strategies Section */
-        .strategy-container {
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-            margin-top: 30px;
-        }
-        
-        .strategy-card {
-            background: var(--light-gray);
-            border-radius: 18px;
-            padding: 25px;
-            border: 1px solid rgba(232, 228, 213, 0.8);
-            position: relative;
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .strategy-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-medium);
-        }
-        
-        .strategy-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 100%;
-            background: var(--gradient-purple);
-        }
-        
-        .strategy-card h4 {
-            color: var(--secondary-color);
-            margin-bottom: 15px;
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-            font-size: 1.4rem;
-            line-height: 1.3;
-            font-weight: 700;
-        }
-        
-        .strategy-card h4 i {
-            color: white;
-            background: var(--gradient-purple);
-            width: 45px;
-            height: 45px;
-            min-width: 45px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            box-shadow: 0 4px 10px rgba(67, 27, 111, 0.3);
-            margin-top: 2px;
-        }
-        
-        .strategy-card p {
-            color: var(--text-color);
-            font-size: 1.05rem;
-            line-height: 1.7;
-        }
-        
-        /* Tech Section */
-        .tech-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-            margin-top: 30px;
-        }
-        
-        .tech-card {
-            background: var(--light-gray);
-            border-radius: 18px;
-            padding: 25px;
-            box-shadow: var(--shadow-light);
-            border: 1px solid rgba(232, 228, 213, 0.8);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .tech-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-medium);
-        }
-        
-        .tech-card h4 {
-            color: var(--secondary-color);
-            margin-bottom: 20px;
-            font-size: 1.4rem;
-            padding-bottom: 10px;
-            border-bottom: 1px solid rgba(67, 27, 111, 0.2);
-            font-weight: 700;
-        }
-        
-        .tech-card ul {
-            list-style-type: none;
-            padding-right: 15px;
-        }
-        
-        .tech-card li {
-            padding: 12px 0;
-            color: var(--text-color);
-            position: relative;
-            padding-right: 30px;
-            border-bottom: 1px solid rgba(232, 228, 213, 0.8);
-            font-size: 1.05rem;
-            line-height: 1.6;
-        }
-        
-        .tech-card li:before {
-            content: "✓";
-            color: var(--secondary-color);
-            position: absolute;
-            right: 0;
-            top: 12px;
             font-weight: bold;
             font-size: 1.2rem;
         }
         
-        /* Self Learning Section */
-        .self-learning {
+        /* تصميم قسم التقنية */
+        .technology-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .technology-card {
+            background: white;
+            border-radius: 18px;
+            padding: 28px;
+            box-shadow: var(--shadow-medium);
+            border: 1px solid rgba(232, 228, 213, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .technology-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-heavy);
+        }
+        
+        .technology-card h4 {
+            color: var(--secondary-color);
+            margin-bottom: 20px;
             display: flex;
-            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.4rem;
+            line-height: 1.3;
+            font-weight: 700;
+        }
+        
+        .technology-card h4 i {
+            color: white;
+            background: var(--gradient-gold);
+            width: 50px;
+            height: 50px;
+            min-width: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            box-shadow: 0 4px 10px rgba(156, 124, 60, 0.3);
+        }
+        
+        .technology-card p {
+            color: var(--text-color);
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            text-align: justify;
+        }
+        
+        .tools-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 20px;
+        }
+        
+        .tool-tag {
+            background: var(--gold-light);
+            color: var(--secondary-color);
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border: 1px solid rgba(193, 154, 95, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .tool-tag:hover {
+            background: var(--accent-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        /* تصميم قسم المبادرات */
+        .initiatives-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .initiative-card {
+            background: var(--purple-light);
+            border-radius: 18px;
+            padding: 28px;
+            border: 1px solid rgba(232, 228, 213, 0.5);
+            box-shadow: var(--shadow-light);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .initiative-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .initiative-card h4 {
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.4rem;
+            line-height: 1.3;
+            font-weight: 700;
+        }
+        
+        .initiative-card h4 i {
+            color: white;
+            background: var(--gradient-purple);
+            width: 50px;
+            height: 50px;
+            min-width: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            box-shadow: 0 4px 10px rgba(44, 26, 94, 0.3);
+        }
+        
+        .initiative-card p {
+            color: var(--text-color);
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            text-align: justify;
+        }
+        
+        /* تصميم قسم الطلاب */
+        .students-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .student-card {
+            background: white;
+            border-radius: 18px;
+            padding: 28px;
+            box-shadow: var(--shadow-medium);
+            border: 1px solid rgba(232, 228, 213, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .student-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-heavy);
+        }
+        
+        .student-card h4 {
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.4rem;
+            line-height: 1.3;
+            font-weight: 700;
+        }
+        
+        .student-card h4 i {
+            color: white;
+            background: linear-gradient(135deg, #6B5B95 0%, #8A7AB5 100%);
+            width: 50px;
+            height: 50px;
+            min-width: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            box-shadow: 0 4px 10px rgba(107, 91, 149, 0.3);
+        }
+        
+        .student-card p {
+            color: var(--text-color);
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            text-align: justify;
+        }
+        
+        /* تصميم قسم التعلم الذاتي */
+        .self-learning-grid {
+            display: grid;
+            grid-template-columns: 1fr;
             gap: 25px;
             margin-top: 30px;
         }
         
         .learning-card {
-            background: var(--light-gray);
+            background: var(--gold-light);
             border-radius: 18px;
-            padding: 25px;
-            border: 1px solid rgba(232, 228, 213, 0.8);
+            padding: 28px;
+            border: 1px solid rgba(232, 228, 213, 0.5);
+            box-shadow: var(--shadow-light);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
         
         .learning-card:hover {
@@ -827,7 +921,7 @@
             color: var(--secondary-color);
             margin-bottom: 20px;
             display: flex;
-            align-items: flex-start;
+            align-items: center;
             gap: 15px;
             font-size: 1.4rem;
             line-height: 1.3;
@@ -836,64 +930,67 @@
         
         .learning-card h4 i {
             color: white;
-            background: var(--gradient-purple);
-            width: 45px;
-            height: 45px;
-            min-width: 45px;
+            background: var(--gradient-gold);
+            width: 50px;
+            height: 50px;
+            min-width: 50px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.2rem;
-            box-shadow: 0 4px 10px rgba(67, 27, 111, 0.3);
-            margin-top: 2px;
+            font-size: 1.3rem;
+            box-shadow: 0 4px 10px rgba(156, 124, 60, 0.3);
         }
         
         .learning-card p {
             color: var(--text-color);
-            line-height: 1.7;
-            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            text-align: justify;
         }
         
-        /* Assessment Section */
+        /* تصميم قسم التقييم الذاتي */
         .assessment-container {
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-columns: 1fr;
             gap: 25px;
             margin-top: 30px;
         }
         
         .assessment-card {
-            background: var(--light-gray);
+            background: white;
             border-radius: 18px;
-            padding: 25px;
-            box-shadow: var(--shadow-light);
-            border: 1px solid rgba(232, 228, 213, 0.8);
+            padding: 28px;
+            box-shadow: var(--shadow-medium);
+            border: 1px solid rgba(232, 228, 213, 0.5);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
         
         .assessment-card:hover {
             transform: translateY(-5px);
-            box-shadow: var(--shadow-medium);
+            box-shadow: var(--shadow-heavy);
         }
         
         .strength {
-            border-top: 4px solid #8A4FBF;
+            border-top: 4px solid #6B5B95;
         }
         
         .improvement {
-            border-top: 4px solid #B86CF5;
+            border-top: 4px solid #9C7C3C;
         }
         
         .plan {
-            border-top: 4px solid #431b6f;
+            border-top: 4px solid #2C1A5E;
         }
         
         .assessment-card h4 {
             color: var(--secondary-color);
             margin-bottom: 20px;
             display: flex;
-            align-items: flex-start;
+            align-items: center;
             gap: 15px;
             font-size: 1.4rem;
             line-height: 1.3;
@@ -902,17 +999,17 @@
         
         .assessment-card h4 i {
             background: rgba(255, 255, 255, 0.9);
-            width: 45px;
-            height: 45px;
-            min-width: 45px;
+            width: 50px;
+            height: 50px;
+            min-width: 50px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             margin-top: 2px;
             color: var(--secondary-color);
-            box-shadow: 0 4px 10px rgba(67, 27, 111, 0.1);
+            box-shadow: 0 4px 10px rgba(44, 26, 94, 0.1);
         }
         
         .assessment-card ul {
@@ -925,7 +1022,7 @@
             color: var(--text-color);
             position: relative;
             padding-right: 30px;
-            border-bottom: 1px solid rgba(232, 228, 213, 0.8);
+            border-bottom: 1px solid rgba(232, 228, 213, 0.5);
             font-size: 1.05rem;
             line-height: 1.6;
         }
@@ -939,15 +1036,15 @@
             font-size: 1.8rem;
         }
         
-        /* Conclusion Section */
+        /* تصميم الخاتمة */
         .conclusion-card {
             background: var(--card-bg);
             border-radius: 20px;
-            padding: 30px 25px;
+            padding: 35px 30px;
             margin-top: 35px;
             text-align: center;
-            border: 1px solid rgba(232, 228, 213, 0.8);
-            box-shadow: 0 15px 30px rgba(67, 27, 111, 0.05);
+            border: 1px solid rgba(232, 228, 213, 0.5);
+            box-shadow: var(--shadow-medium);
             position: relative;
             overflow: hidden;
         }
@@ -958,34 +1055,34 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 4px;
-            background: var(--gradient-purple);
+            height: 5px;
+            background: var(--gradient-gold);
         }
         
         .conclusion-card h3 {
             color: var(--secondary-color);
             margin-bottom: 25px;
-            font-size: 1.8rem;
+            font-size: 1.9rem;
             line-height: 1.3;
             font-weight: 800;
         }
         
         .conclusion-card p {
             color: var(--text-color);
-            line-height: 1.7;
+            line-height: 1.8;
             margin-bottom: 20px;
-            font-size: 1.05rem;
+            font-size: 1.1rem;
             text-align: right;
         }
         
-        /* Footer */
+        /* الفوتر */
         .footer {
             text-align: center;
             padding: 25px 20px;
             margin-top: 25px;
             color: var(--text-light);
-            border-top: 1px solid rgba(232, 228, 213, 0.8);
-            font-size: 0.9rem;
+            border-top: 1px solid rgba(232, 228, 213, 0.5);
+            font-size: 0.95rem;
             background: var(--card-bg);
             border-radius: 15px;
             margin-bottom: 20px;
@@ -993,7 +1090,7 @@
             box-shadow: var(--shadow-light);
         }
         
-        /* Animations */
+        /* الأنيميشن */
         @keyframes pulse {
             0% { transform: scale(1); }
             50% { transform: scale(1.05); }
@@ -1002,7 +1099,7 @@
         
         @keyframes floating {
             0% { transform: translateY(0px); }
-            50% { transform: translateY(-5px); }
+            50% { transform: translateY(-8px); }
             100% { transform: translateY(0px); }
         }
         
@@ -1017,27 +1114,31 @@
             transform: translateY(0);
         }
         
-        /* Responsive Design */
+        /* تصميم متجاوب */
         @media (min-width: 576px) {
             .container {
                 padding: 0 25px;
             }
             
             .nav-icon {
-                min-width: 70px;
+                min-width: 75px;
                 padding: 10px 12px;
             }
             
             .nav-icon span {
-                font-size: 0.7rem;
+                font-size: 0.75rem;
             }
             
             .logo-title {
+                font-size: 1.3rem;
+            }
+            
+            .logo-subtitle {
                 font-size: 1.6rem;
             }
             
             .section-title {
-                font-size: 2rem;
+                font-size: 2.1rem;
             }
             
             .about-header {
@@ -1047,24 +1148,33 @@
             }
             
             .avatar {
-                width: 160px;
-                height: 160px;
+                width: 170px;
+                height: 170px;
                 font-size: 4rem;
             }
             
             .about-info h3 {
-                font-size: 2rem;
+                font-size: 2.1rem;
             }
             
             .certificates-grid,
-            .courses-grid {
+            .certificate-cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .evaluation-grid,
+            .technology-grid,
+            .initiatives-container,
+            .students-grid,
+            .self-learning-grid,
+            .assessment-container {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
         
         @media (min-width: 768px) {
             .navbar {
-                height: 90px;
+                height: 95px;
                 padding: 0;
             }
             
@@ -1072,7 +1182,7 @@
                 flex-direction: row;
                 justify-content: space-between;
                 padding: 0 30px;
-                height: 90px;
+                height: 95px;
                 gap: 0;
             }
             
@@ -1087,11 +1197,11 @@
             }
             
             .logo-title {
-                font-size: 1.8rem;
+                font-size: 1.4rem;
             }
             
             .logo-subtitle {
-                font-size: 0.9rem;
+                font-size: 1.8rem;
             }
             
             .main-content {
@@ -1099,7 +1209,7 @@
             }
             
             .section-title {
-                font-size: 2.2rem;
+                font-size: 2.3rem;
             }
             
             .about-details {
@@ -1132,20 +1242,20 @@
                 gap: 30px;
             }
             
-            .self-learning {
-                display: grid;
+            .certificates-grid {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 30px;
             }
             
+            .certificate-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .evaluation-grid,
+            .technology-grid,
+            .initiatives-container,
+            .students-grid,
+            .self-learning-grid,
             .assessment-container {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                gap: 30px;
-            }
-            
-            .certificates-grid,
-            .courses-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
@@ -1156,12 +1266,12 @@
             }
             
             .nav-icon {
-                min-width: 75px;
+                min-width: 80px;
                 padding: 10px 15px;
             }
             
             .nav-icon span {
-                font-size: 0.75rem;
+                font-size: 0.8rem;
             }
             
             .about-details {
@@ -1184,22 +1294,37 @@
                 grid-template-columns: repeat(2, 1fr);
             }
             
-            .assessment-container {
-                grid-template-columns: repeat(3, 1fr);
+            .certificates-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
             
-            .certificates-grid,
-            .courses-grid {
+            .certificate-cards {
                 grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .evaluation-grid,
+            .technology-grid,
+            .initiatives-container,
+            .students-grid,
+            .self-learning-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .assessment-container {
+                grid-template-columns: repeat(3, 1fr);
             }
         }
         
         @media (min-width: 1200px) {
             .nav-icon {
-                min-width: 80px;
+                min-width: 85px;
             }
             
             .logo-title {
+                font-size: 1.5rem;
+            }
+            
+            .logo-subtitle {
                 font-size: 2rem;
             }
             
@@ -1211,8 +1336,19 @@
                 grid-template-columns: repeat(4, 1fr);
             }
             
-            .certificates-grid,
-            .courses-grid {
+            .certificates-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .certificate-cards {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .evaluation-grid,
+            .technology-grid,
+            .initiatives-container,
+            .students-grid,
+            .self-learning-grid {
                 grid-template-columns: repeat(3, 1fr);
             }
         }
@@ -1220,7 +1356,7 @@
         @media (max-height: 600px) and (orientation: landscape) {
             .navbar {
                 height: auto;
-                min-height: 60px;
+                min-height: 65px;
             }
             
             .nav-container {
@@ -1229,40 +1365,44 @@
             }
             
             .logo-icon {
-                width: 40px;
-                height: 40px;
-                min-width: 40px;
+                width: 45px;
+                height: 45px;
+                min-width: 45px;
             }
             
             .logo-icon i {
-                font-size: 1.1rem;
-            }
-            
-            .logo-title {
                 font-size: 1.2rem;
             }
             
+            .logo-title {
+                font-size: 1.1rem;
+            }
+            
+            .logo-subtitle {
+                font-size: 1.3rem;
+            }
+            
             .nav-icon {
-                min-width: 60px;
-                height: 40px;
+                min-width: 65px;
+                height: 45px;
                 padding: 6px 8px;
             }
             
             .nav-icon i {
-                font-size: 0.9rem;
+                font-size: 1rem;
                 margin-bottom: 2px;
             }
             
             .nav-icon span {
-                font-size: 0.6rem;
+                font-size: 0.65rem;
             }
             
             .pdf-viewer {
-                height: 300px;
+                height: 350px;
             }
         }
         
-        /* Utility Classes */
+        /* إضافات خاصة */
         .no-select {
             -webkit-touch-callout: none;
             -webkit-user-select: none;
@@ -1484,7 +1624,7 @@
                 <div class="certificates-section">
                     <div class="certificates-grid">
                         <div class="certificate-item fade-in-element">
-                            <div class="certificate-header">
+                            <div class="certificate-header-pdf">
                                 <h3>ملف الخطط العلاجية</h3>
                                 <div class="certificate-actions">
                                     <a href="https://drive.google.com/file/d/1fq66Do1rcTUCRFAevBp-_PXc0lfpFoNl/view?usp=drivesdk" target="_blank" class="pdf-action-btn" title="فتح في نافذة جديدة">
@@ -1501,7 +1641,7 @@
                         </div>
                         
                         <div class="certificate-item fade-in-element">
-                            <div class="certificate-header">
+                            <div class="certificate-header-pdf">
                                 <h3>رفع الحد الأدنى من المهارات</h3>
                                 <div class="certificate-actions">
                                     <a href="https://drive.google.com/file/d/1AbGGbzLThaQLP_MTu-UWOPGXT9PrOA-T/view?usp=drivesdk" target="_blank" class="pdf-action-btn" title="فتح في نافذة جديدة">
@@ -1522,56 +1662,55 @@
             
             <section id="courses" class="section">
                 <h2 class="section-title">الدورات التربوية</h2>
+                
+                <div class="courses-description fade-in-element">
+                    <p>في هذا القسم يمكنك عرض شهادات الدورات التربوية التي حصلت عليها مع إمكانية تنزيل نسخة PDF من كل شهادة.</p>
+                </div>
+                
                 <div class="courses-section">
-                    <div class="courses-grid">
-                        <div class="course-item fade-in-element">
-                            <div class="course-header">
-                                <h3>دورة شهادة القياس والتقويم التربوي</h3>
-                                <div class="certificate-actions">
-                                    <a href="https://drive.google.com/file/d/1Px7knwhc94ZVEtk1ZWzbS3B94w8OvAEJ/view?usp=drivesdk" target="_blank" class="pdf-action-btn" title="فتح في نافذة جديدة">
-                                        <i class="fas fa-external-link-alt"></i>
-                                    </a>
-                                    <a href="https://drive.google.com/file/d/1Px7knwhc94ZVEtk1ZWzbS3B94w8OvAEJ/view?usp=drivesdk" download class="pdf-action-btn" title="تحميل الملف">
-                                        <i class="fas fa-download"></i>
+                    <div class="certificate-cards">
+                        <!-- شهادة القياس والتقويم -->
+                        <div class="certificate-card fade-in-element">
+                            <div class="certificate-header">
+                                <div class="certificate-title">شهادة القياس والتقويم التربوي</div>
+                                <div class="download-btn-container">
+                                    <a href="https://drive.google.com/file/d/1Px7knwhc94ZVEtk1ZWzbS3B94w8OvAEJ/view?usp=drivesdk" download class="download-btn">
+                                        <i class="fas fa-download"></i> تنزيل PDF
                                     </a>
                                 </div>
                             </div>
-                            <div class="pdf-viewer">
-                                <iframe src="https://drive.google.com/file/d/1Px7knwhc94ZVEtk1ZWzbS3B94w8OvAEJ/preview" allow="autoplay"></iframe>
+                            <div class="certificate-image-container">
+                                <img src="https://i.ibb.co/3yvHTMjM/IMG-2136.jpg" alt="شهادة القياس والتقويم التربوي" class="certificate-image">
                             </div>
                         </div>
                         
-                        <div class="course-item fade-in-element">
-                            <div class="course-header">
-                                <h3>دورة ممارسات فاعلة لمعلم المستقبل</h3>
-                                <div class="certificate-actions">
-                                    <a href="https://drive.google.com/file/d/1MYEG2jP1eXg00CaQe0fjsuiq2q6h2v-a/view?usp=drivesdk" target="_blank" class="pdf-action-btn" title="فتح في نافذة جديدة">
-                                        <i class="fas fa-external-link-alt"></i>
-                                    </a>
-                                    <a href="https://drive.google.com/file/d/1MYEG2jP1eXg00CaQe0fjsuiq2q6h2v-a/view?usp=drivesdk" download class="pdf-action-btn" title="تحميل الملف">
-                                        <i class="fas fa-download"></i>
+                        <!-- شهادة ممارسات فاعلة لمعلم المستقبل -->
+                        <div class="certificate-card fade-in-element">
+                            <div class="certificate-header">
+                                <div class="certificate-title">ممارسات فاعلة لمعلم المستقبل</div>
+                                <div class="download-btn-container">
+                                    <a href="https://drive.google.com/file/d/1MYEG2jP1eXg00CaQe0fjsuiq2q6h2v-a/view?usp=drivesdk" download class="download-btn">
+                                        <i class="fas fa-download"></i> تنزيل PDF
                                     </a>
                                 </div>
                             </div>
-                            <div class="pdf-viewer">
-                                <iframe src="https://drive.google.com/file/d/1MYEG2jP1eXg00CaQe0fjsuiq2q6h2v-a/preview" allow="autoplay"></iframe>
+                            <div class="certificate-image-container">
+                                <img src="https://i.ibb.co/HLXJHKYf/IMG-2135.jpg" alt="ممارسات فاعلة لمعلم المستقبل" class="certificate-image">
                             </div>
                         </div>
                         
-                        <div class="course-item fade-in-element">
-                            <div class="course-header">
-                                <h3>مهارات تنفيذ التدريس في مدارس الطفولة المبكرة</h3>
-                                <div class="certificate-actions">
-                                    <a href="https://drive.google.com/file/d/1jIqEawrZGQepy6L85yhI3jrlX8at_ngN/view?usp=drivesdk" target="_blank" class="pdf-action-btn" title="فتح في نافذة جديدة">
-                                        <i class="fas fa-external-link-alt"></i>
-                                    </a>
-                                    <a href="https://drive.google.com/file/d/1jIqEawrZGQepy6L85yhI3jrlX8at_ngN/view?usp=drivesdk" download class="pdf-action-btn" title="تحميل الملف">
-                                        <i class="fas fa-download"></i>
+                        <!-- شهادة مهارات تنفيذ التدريس في الطفولة المبكرة -->
+                        <div class="certificate-card fade-in-element">
+                            <div class="certificate-header">
+                                <div class="certificate-title">مهارات تنفيذ التدريس في الطفولة المبكرة</div>
+                                <div class="download-btn-container">
+                                    <a href="https://drive.google.com/file/d/1jIqEawrZGQepy6L85yhI3jrlX8at_ngN/view?usp=drivesdk" download class="download-btn">
+                                        <i class="fas fa-download"></i> تنزيل PDF
                                     </a>
                                 </div>
                             </div>
-                            <div class="pdf-viewer">
-                                <iframe src="https://drive.google.com/file/d/1jIqEawrZGQepy6L85yhI3jrlX8at_ngN/preview" allow="autoplay"></iframe>
+                            <div class="certificate-image-container">
+                                <img src="https://i.ibb.co/JWnw2h3z/IMG-2137.jpg" alt="مهارات تنفيذ التدريس في مدارس الطفولة المبكرة" class="certificate-image">
                             </div>
                         </div>
                     </div>
@@ -1603,162 +1742,176 @@
                 </div>
             </section>
             
+            <!-- قسم التقويم المحدث -->
             <section id="evaluation" class="section">
                 <h2 class="section-title">التقويم والاختبارات</h2>
-                <div class="tech-grid">
-                    <div class="tech-card fade-in-element">
-                        <h4>أنماط التقويم المستخدمة</h4>
-                        <ul>
-                            <li>التقويم التشخيصي القبلي</li>
-                            <li>التقويم التكويني المستمر</li>
-                            <li>التقويم الختامي النهائي</li>
-                            <li>التقويم الذاتي للطلاب</li>
-                        </ul>
+                <div class="evaluation-section">
+                    <div class="evaluation-card fade-in-element">
+                        <h3><i class="fas fa-clipboard-check"></i> فلسفتي في التقويم</h3>
+                        <p>أحرص على تنويع أساليب التقويم بما يحقق العدالة ويراعي الفروق الفردية بين طالباتي، حيث أستخدم التقويم التشخيصي في بداية الدروس للتعرف على مستوياتهن، وأطبق التقويم التكويني أثناء الشرح من خلال الأسئلة الشفوية، أوراق العمل، والأنشطة الصفية.</p>
+                        <p>كما أعتمد على التقويم الختامي عبر الاختبارات القصيرة والمهام الأدائية، وأقوم بتحليل نتائج التقويم للاستفادة منها في تحسين أساليب تدريسي ووضع الخطط العلاجية المناسبة.</p>
                     </div>
                     
-                    <div class="tech-card fade-in-element">
-                        <h4>تنويع أدوات التقويم</h4>
-                        <ul>
-                            <li>اختبارات تحريرية متنوعة</li>
-                            <li>مشاريع عملية وتطبيقية</li>
-                            <li>ملاحظات أداء صفية</li>
-                            <li>ملفات إنجاز الطلاب</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="tech-card fade-in-element">
-                        <h4>معالجة الضعف الدراسي</h4>
-                        <ul>
-                            <li>تحليل نتائج التقويم</li>
-                            <li>تصميم برامج علاجية</li>
-                            <li>تنفيذ جلسات تقوية</li>
-                            <li>متابعة التقدم الأكاديمي</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="tech-card fade-in-element">
-                        <h4>الاختبارات الإبداعية</h4>
-                        <ul>
-                            <li>اختبارات حل المشكلات</li>
-                            <li>اختبارات المشروعات العملية</li>
-                            <li>اختبارات الأداء التطبيقي</li>
-                            <li>اختبارات التفكير الإبداعي</li>
-                        </ul>
+                    <div class="evaluation-grid">
+                        <div class="evaluation-item fade-in-element">
+                            <h4>التقويم التشخيصي</h4>
+                            <ul>
+                                <li>تقويم قبلي لتحديد مستوى الطالبات</li>
+                                <li>تحديد نقاط القوة والضعف</li>
+                                <li>تصميم خطط تعليمية فردية</li>
+                                <li>تحديد الاحتياجات التعليمية</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="evaluation-item fade-in-element">
+                            <h4>التقويم التكويني</h4>
+                            <ul>
+                                <li>أسئلة شفوية أثناء الشرح</li>
+                                <li>أوراق العمل التطبيقية</li>
+                                <li>أنشطة صفية تفاعلية</li>
+                                <li>متابعة التقدم اليومي</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="evaluation-item fade-in-element">
+                            <h4>التقويم الختامي</h4>
+                            <ul>
+                                <li>اختبارات قصيرة دورية</li>
+                                <li>مهام أدائية عملية</li>
+                                <li>مشاريع تعليمية</li>
+                                <li>تقارير التقدم الشامل</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="evaluation-item fade-in-element">
+                            <h4>تحليل النتائج</h4>
+                            <ul>
+                                <li>تحليل إحصائي للنتائج</li>
+                                <li>تحديد مجالات التحسين</li>
+                                <li>وضع خطط علاجية</li>
+                                <li>تطوير أساليب التدريس</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </section>
             
+            <!-- قسم التقنية المحدث -->
             <section id="technology" class="section">
                 <h2 class="section-title">توظيف التقنية في التعليم</h2>
-                <div class="tech-grid">
-                    <div class="tech-card fade-in-element">
-                        <h4>الأدوات الرقمية المتقدمة</h4>
-                        <ul>
-                            <li>منصة مدرستي للتعليم المدمج</li>
-                            <li>برامج الرياضيات التفاعلية</li>
-                            <li>تطبيقات الواقع المعزز</li>
-                            <li>منصات الألعاب التعليمية</li>
-                            <li>برامج التخطيط الذكي</li>
-                        </ul>
+                <div class="technology-grid">
+                    <div class="technology-card fade-in-element">
+                        <h4><i class="fas fa-laptop"></i> رؤيتي في توظيف التقنية</h4>
+                        <p>أوظف التقنيات التعليمية الحديثة في تدريس مادة الرياضيات بهدف تبسيط المفاهيم المجردة وزيادة دافعية التعلم لدى طالباتي، حيث أستخدم العروض التقديمية التفاعلية، المنصات التعليمية الرقمية، وبرامج تمثيل الرسوم البيانية.</p>
+                        <p>كما أستثمر السبورة الذكية والتطبيقات التعليمية في تنفيذ الأنشطة الصفية، وأكلف الطالبات بمهام رقمية تعزز التعلم الذاتي والتعاوني.</p>
+                        
+                        <div class="tools-list">
+                            <span class="tool-tag">العروض التقديمية التفاعلية</span>
+                            <span class="tool-tag">المنصات التعليمية الرقمية</span>
+                            <span class="tool-tag">برامج الرسوم البيانية</span>
+                            <span class="tool-tag">السبورة الذكية</span>
+                            <span class="tool-tag">التطبيقات التعليمية</span>
+                            <span class="tool-tag">المهام الرقمية</span>
+                        </div>
                     </div>
                     
-                    <div class="tech-card fade-in-element">
-                        <h4>الاختبارات الإلكترونية</h4>
-                        <ul>
-                            <li>تصميم اختبارات تفاعلية</li>
-                            <li>استخدام تقنيات التصحيح الآلي</li>
-                            <li>إنشاء بنك أسئلة إلكتروني</li>
-                            <li>تصميم أنشطة تقييم ذاتي</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="tech-card fade-in-element">
-                        <h4>مزايا التكامل التقني</h4>
-                        <ul>
-                            <li>تجارب تعلم شخصية</li>
-                            <li>زيادة تفاعل الطلاب</li>
-                            <li>تمكين التعلم عن بعد</li>
-                            <li>تحسين كفاءة التقييم</li>
+                    <div class="technology-card fade-in-element">
+                        <h4><i class="fas fa-chart-line"></i> أهداف الاستخدام التقني</h4>
+                        <p>تهدف ممارساتي التقنية إلى تحويل بيئة التعلم إلى مساحة تفاعلية جذابة، حيث يصبح الطالب مشاركاً فعالاً في بناء المعرفة بدلاً من متلقٍ سلبي.</p>
+                        
+                        <ul style="list-style-type: none; padding-right: 0;">
+                            <li style="padding: 10px 0; color: var(--text-color); position: relative; padding-right: 30px;">
+                                <i class="fas fa-check" style="color: var(--primary-color); position: absolute; right: 0; top: 12px;"></i>
+                                <strong>تبسيط المفاهيم الرياضية:</strong> تحويل المفاهيم المجردة إلى مرئيات تفاعلية
+                            </li>
+                            <li style="padding: 10px 0; color: var(--text-color); position: relative; padding-right: 30px;">
+                                <i class="fas fa-check" style="color: var(--primary-color); position: absolute; right: 0; top: 12px;"></i>
+                                <strong>زيادة الدافعية:</strong> جعل عملية التعلم أكثر تشويقاً وتفاعلاً
+                            </li>
+                            <li style="padding: 10px 0; color: var(--text-color); position: relative; padding-right: 30px;">
+                                <i class="fas fa-check" style="color: var(--primary-color); position: absolute; right: 0; top: 12px;"></i>
+                                <strong>تعزيز التعلم الذاتي:</strong> تمكين الطالبات من التعلم وفق سرعتهن الخاصة
+                            </li>
+                            <li style="padding: 10px 0; color: var(--text-color); position: relative; padding-right: 30px;">
+                                <i class="fas fa-check" style="color: var(--primary-color); position: absolute; right: 0; top: 12px;"></i>
+                                <strong>تنمية المهارات الرقمية:</strong> إعداد الطالبات لعالم تقني متطور
+                            </li>
                         </ul>
                     </div>
                 </div>
             </section>
             
+            <!-- قسم المبادرات المحدث -->
             <section id="initiatives" class="section">
                 <h2 class="section-title">المبادرات الصفية والمدرسية</h2>
-                <div class="strategy-container">
-                    <div class="strategy-card fade-in-element">
-                        <h4><i class="fas fa-seedling"></i> مبادرة "رياضيات الحياة"</h4>
-                        <p>ربط الرياضيات بالحياة اليومية من خلال أنشطة عملية مثل تصميم ميزانية وتحليل بيانات.</p>
+                <div class="initiatives-container">
+                    <div class="initiative-card fade-in-element">
+                        <h4><i class="fas fa-lightbulb"></i> مشاركتي في المبادرات التعليمية</h4>
+                        <p>أشارك بفاعلية في المبادرات التعليمية الهادفة إلى رفع مستوى التحصيل الدراسي في مادة الرياضيات، مثل مبادرات علاج التعثر الدراسي وتنمية المهارات الأساسية.</p>
+                        <p>كما أحرص على تقديم مبادرات وأنشطة إبداعية، وتنفيذ مسابقات تعليمية تسهم في تنمية التفكير المنطقي وتعزيز روح التنافس الإيجابي بين الطالبات.</p>
                     </div>
                     
-                    <div class="strategy-card fade-in-element">
-                        <h4><i class="fas fa-medal"></i> مسابقة "عباقرة الرياضيات"</h4>
-                        <p>مسابقة فصلية تشمل تحديات رياضية متنوعة لاكتشاف المواهب وتنمية روح المنافسة.</p>
+                    <div class="initiative-card fade-in-element">
+                        <h4><i class="fas fa-hands-helping"></i> مبادرات علاج التعثر الدراسي</h4>
+                        <p>أقوم بتصميم وتنفيذ مبادرات متخصصة لعلاج صعوبات التعلم في الرياضيات، تشمل جلسات تقوية فردية وجماعية، وأنشطة علاجية مكثفة تركز على المهارات الأساسية التي تعاني منها الطالبات.</p>
                     </div>
                     
-                    <div class="strategy-card fade-in-element">
-                        <h4><i class="fas fa-hands-helping"></i> نادي "أصدقاء الرياضيات"</h4>
-                        <p>نادي طلابي تطوعي يهدف إلى تعزيز حب الرياضيات ومساعدة الطلاب بعضهم بعضاً.</p>
+                    <div class="initiative-card fade-in-element">
+                        <h4><i class="fas fa-trophy"></i> المسابقات التعليمية</h4>
+                        <p>أنظم مسابقات صفية ومدرسية دورية في الرياضيات تهدف إلى تنمية التفكير المنطقي والإبداعي، وتعزيز الثقة بالنفس، وتحفيز الطالبات على التفوق والتميز في المادة.</p>
                     </div>
                 </div>
             </section>
             
+            <!-- قسم الطلاب المحدث -->
             <section id="students" class="section">
                 <h2 class="section-title">العناية بالطلاب</h2>
-                <div class="tech-grid">
-                    <div class="tech-card fade-in-element">
-                        <h4>برامج الدعم الأكاديمي</h4>
-                        <ul>
-                            <li>برامج علاجية فردية</li>
-                            <li>جلسات تقوية مرنة</li>
-                            <li>مواد تعليمية مساندة</li>
-                            <li>شراكات مع أولياء الأمور</li>
-                        </ul>
+                <div class="students-grid">
+                    <div class="student-card fade-in-element">
+                        <h4><i class="fas fa-heart"></i> العلاقات التربوية الإيجابية</h4>
+                        <p>أعمل على بناء علاقات تربوية إيجابية مع طالباتي قائمة على الاحترام المتبادل، وأحرص على توفير بيئة صفية آمنة ومحفزة على التعلم.</p>
+                        <p>أراعي الفروق الفردية بين الطالبات، وأدعم الطالبات المتعثرات بخطط علاجية مناسبة، كما أعمل على تنمية مهارات التفكير العليا لدى الطالبات المتفوقات، وتعزيز السلوك الإيجابي والانضباط داخل الصف.</p>
                     </div>
                     
-                    <div class="tech-card fade-in-element">
-                        <h4>رعاية المتفوقين</h4>
-                        <ul>
-                            <li>برامج إثرائية متقدمة</li>
-                            <li>مشاركة في مسابقات</li>
-                            <li>فرص قيادية داخلية</li>
-                            <li>تشجيع البحث العلمي</li>
-                        </ul>
+                    <div class="student-card fade-in-element">
+                        <h4><i class="fas fa-users"></i> بيئة التعلم الداعمة</h4>
+                        <p>أخلق في صفي بيئة تعليمية داعمة تشجع على المشاركة والتعبير عن الرأي، حيث يشعر كل طالب بالأمان النفسي والثقة في قدراته.</p>
+                        <p>أستخدم أساليب التعزيز الإيجابي، وأشجع الحوار البناء، وأهتم بتعزيز القيم التربوية والأخلاقية إلى جانب المهارات الأكاديمية.</p>
                     </div>
                     
-                    <div class="tech-card fade-in-element">
-                        <h4>التعلم الشامل</h4>
-                        <ul>
-                            <li>أنشطة متنوعة المستويات</li>
-                            <li>بدائل تعليمية متنوعة</li>
-                            <li>استراتيجيات تدريس مرنة</li>
-                            <li>بيئة صفية داعمة</li>
-                        </ul>
+                    <div class="student-card fade-in-element">
+                        <h4><i class="fas fa-graduation-cap"></i> رعاية المتفوقات</h4>
+                        <p>أصمم برامج إثرائية خاصة للطالبات المتفوقات تشمل أنشطة متقدمة، ومشاريع بحثية مصغرة، ومشاركات في المسابقات المحلية والعالمية.</p>
+                        <p>أعمل على تنمية مهارات القيادة والبحث العلمي والإبداع لدى هذه الفئة، وأوفر لها فرصاً للتطور والتقدم المستمر.</p>
                     </div>
                 </div>
             </section>
             
+            <!-- قسم التعلم الذاتي المحدث -->
             <section id="self-learning" class="section">
                 <h2 class="section-title">التعلم الذاتي والتطوير المهني</h2>
-                <div class="self-learning">
+                <div class="self-learning-grid">
                     <div class="learning-card fade-in-element">
-                        <h4><i class="fas fa-book"></i> القراءة التخصصية</h4>
-                        <p>متابعة أحدث الأبحاث في تدريس الرياضيات والاطلاع على المجلات التربوية المحلية والعالمية.</p>
+                        <h4><i class="fas fa-book-open"></i> استراتيجيات التعلم الذاتي</h4>
+                        <p>أسعى إلى تطوير أدائي المهني بشكل مستمر من خلال التعلم الذاتي، حيث أحرص على الاطلاع على أحدث الاستراتيجيات في تدريس الرياضيات، والمشاركة في الدورات التدريبية وورش العمل التربوية.</p>
+                        <p>كما أطبق ما أكتسبه من معارف ومهارات جديدة في ممارساتي الصفية، وأوثق ذلك في ملفي المهني بما يعكس نمواً مهنياً مستداماً.</p>
                     </div>
                     
                     <div class="learning-card fade-in-element">
-                        <h4><i class="fas fa-video"></i> التدريب الإلكتروني</h4>
-                        <p>الالتحاق بالدورات التدريبية عبر الإنترنت وحضور المؤتمرات الافتراضية المتخصصة.</p>
+                        <h4><i class="fas fa-graduation-cap"></i> مصادر التعلم المستمر</h4>
+                        <p>أتواصل مع مصادر التعلم المتنوعة مثل المجلات التربوية المتخصصة، المنصات التعليمية الإلكترونية، المؤتمرات والندوات العلمية، وبرامج التطوير المهني التي تقدمها الجهات التعليمية.</p>
+                        <p>أحرص على تنويع مصادر معرفتي لتشمل أحدث التطورات في مجال تدريس الرياضيات والتربية بشكل عام.</p>
                     </div>
                     
                     <div class="learning-card fade-in-element">
-                        <h4><i class="fas fa-graduation-cap"></i> الشهادات والاعتمادات</h4>
-                        <p>الحصول على شهادات في استخدام التقنية في التعليم واستراتيجيات التعلم النشط.</p>
+                        <h4><i class="fas fa-chart-line"></i> التطبيق والتوثيق</h4>
+                        <p>لا يقتصر تطويري المهني على الاكتساب النظري فحسب، بل أحرص على تطبيق كل فكرة جديدة في صفي، وتقييم نتائجها، وتوثيق التجارب الناجحة لتعميم الفائدة.</p>
+                        <p>أحتفظ بسجل لتطوري المهني يتضمن الدورات، الشهادات، التجارب التطبيقية، والتغذية الراجعة من الزملاء والطلاب.</p>
                     </div>
                 </div>
             </section>
             
+            <!-- قسم التقييم الذاتي -->
             <section id="assessment" class="section">
                 <h2 class="section-title">التقييم الذاتي والتطوير المهني</h2>
                 <div class="assessment-container">
@@ -1903,26 +2056,6 @@
                 });
             }, 300);
             
-            const navIconsContainer = document.querySelector('.nav-icons');
-            let isScrolling = false;
-            
-            if (navIconsContainer) {
-                navIconsContainer.addEventListener('touchmove', function(e) {
-                    if (!isScrolling) {
-                        isScrolling = true;
-                        setTimeout(() => {
-                            isScrolling = false;
-                        }, 100);
-                    }
-                });
-            }
-            
-            document.body.addEventListener('touchmove', function(e) {
-                if (e.target.closest('.nav-icons')) {
-                    return;
-                }
-            }, { passive: true });
-            
             let lastScrollTop = 0;
             const navbar = document.querySelector('.navbar');
             
@@ -1947,26 +2080,6 @@
                 document.body.style.opacity = '1';
                 document.body.style.transition = 'opacity 0.3s ease';
             }, 100);
-            
-            if (window.innerWidth <= 480) {
-                document.querySelectorAll('p, li, span').forEach(el => {
-                    const currentSize = parseFloat(window.getComputedStyle(el).fontSize);
-                    if (currentSize > 14) {
-                        el.style.fontSize = (currentSize * 0.95) + 'px';
-                    }
-                });
-            }
-            
-            if (/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream) {
-                document.body.style.webkitBackfaceVisibility = 'hidden';
-                document.body.style.webkitTransform = 'translateZ(0)';
-            }
-        });
-        
-        document.addEventListener('touchstart', function(event) {
-            if (event.target.tagName === 'INPUT' || event.target.tagName === 'TEXTAREA') {
-                event.target.style.fontSize = '16px';
-            }
         });
     </script>
 </body>
