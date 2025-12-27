@@ -1,3 +1,4 @@
+
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
@@ -43,17 +44,17 @@
             -webkit-text-size-adjust: 100%;
         }
         
-        /* Fixed Top Bar Styles - Updated (4x larger) */
+        /* Fixed Top Bar Styles - Updated (4x larger) - WHITE BACKGROUND */
         .fixed-top-bar {
             position: fixed;
             top: 0;
             right: 0;
             left: 0;
-            background: var(--gradient-purple);
-            color: white;
+            background: #FFFFFF; /* WHITE BACKGROUND */
+            color: var(--primary-color); /* GOLD TEXT COLOR */
             padding: 15px 0;
             z-index: 2000;
-            box-shadow: 0 3px 10px rgba(44, 26, 94, 0.3);
+            box-shadow: 0 3px 10px rgba(44, 26, 94, 0.15);
             border-bottom: 2px solid var(--accent-color);
             transition: transform 0.3s ease;
             transform: translateY(0);
@@ -79,13 +80,14 @@
             position: relative;
             overflow: hidden;
             text-align: center;
-            font-weight: 600;
-            font-size: 1.6rem; /* Larger font */
-            letter-spacing: -0.2px;
-            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+            font-weight: 700;
+            font-size: 2.2rem; /* LARGER FONT - GOLD COLOR */
+            letter-spacing: -0.3px;
+            text-shadow: 0 2px 4px rgba(156, 124, 60, 0.3); /* GOLD SHADOW */
             display: flex;
             align-items: center;
             justify-content: center;
+            color: var(--primary-color); /* GOLD TEXT COLOR */
         }
         
         .message {
@@ -101,6 +103,7 @@
             text-overflow: ellipsis;
             line-height: 1.3;
             padding: 0 20px;
+            color: var(--primary-color); /* GOLD TEXT COLOR */
         }
         
         .message.active {
@@ -1299,7 +1302,7 @@
             }
             
             .fade-messages {
-                font-size: 1.8rem;
+                font-size: 2.4rem; /* تكبير الخط للشاشات المتوسطة */
                 height: 100px;
             }
             
@@ -1538,7 +1541,7 @@
             
             .fade-messages {
                 height: 80px;
-                font-size: 1.2rem;
+                font-size: 1.6rem;
             }
             
             .navbar {
@@ -1623,7 +1626,7 @@
             }
             
             .fade-messages {
-                font-size: 1.2rem;
+                font-size: 1.8rem;
                 height: 100px;
             }
             
@@ -1690,7 +1693,7 @@
             }
             
             .fade-messages {
-                font-size: 1rem;
+                font-size: 1.5rem;
                 height: 80px;
             }
             
@@ -1788,18 +1791,42 @@
         * {
             -webkit-overflow-scrolling: touch;
         }
+        
+        /* تأثير ذهبي للعبارات */
+        @keyframes gold-glow {
+            0% { text-shadow: 0 0 5px rgba(193, 154, 95, 0.3); }
+            50% { text-shadow: 0 0 15px rgba(193, 154, 95, 0.7), 0 0 25px rgba(156, 124, 60, 0.5); }
+            100% { text-shadow: 0 0 5px rgba(193, 154, 95, 0.3); }
+        }
+        
+        .message.active {
+            opacity: 1;
+            transform: translateY(0);
+            animation: gold-glow 3s infinite alternate;
+        }
     </style>
 </head>
 <body class="no-select">
-    <!-- Fixed Top Bar - Updated (4x larger, no close button) -->
+    <!-- Fixed Top Bar - Updated (4x larger, no close button) - WHITE BACKGROUND -->
     <div class="fixed-top-bar">
         <div class="top-bar-container">
             <div class="fade-messages">
+                <!-- العبارات الأصلية -->
                 <div class="message active">كلّ طالب يستحق فرصة للتميّز</div>
                 <div class="message">التعليم رحلة… ودوري أن أجعلها ممتعة</div>
                 <div class="message">كل فكرة عظيمة تبدأ بسؤال</div>
                 <div class="message">التقنية وسيلة لتمكين التعلم</div>
                 <div class="message">التقييم من أجل التعلّم وليس لمجرّد الحكم</div>
+                
+                <!-- العبارات الجديدة المطلوبة -->
+                <div class="message">التعلّم المرن يفتح أبواب الإبداع</div>
+                <div class="message">التفكير النقدي أساس اتخاذ القرار</div>
+                <div class="message">المتعلم شريك في التعلم… وليس متلقياً فقط</div>
+                <div class="message">الرياضيات ليست أرقاماً فقط… بل تفكير ومنطق</div>
+                <div class="message">كل مسألة رياضية فرصة لحل مشكلة من واقع الحياة</div>
+                <div class="message">عندما يفهم الطالب الفكرة… تصبح الأرقام صديقة له</div>
+                <div class="message">الرياضيات لغة الكون… ومفتاح الابتكار</div>
+                <div class="message">الخطأ في الرياضيات خطوة نحو الحل الصحيح</div>
             </div>
         </div>
     </div>
