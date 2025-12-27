@@ -1,4 +1,3 @@
-
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
@@ -44,6 +43,71 @@
             -webkit-text-size-adjust: 100%;
         }
         
+        /* Fixed Top Bar Styles - Updated (4x larger) */
+        .fixed-top-bar {
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            background: var(--gradient-purple);
+            color: white;
+            padding: 15px 0;
+            z-index: 2000;
+            box-shadow: 0 3px 10px rgba(44, 26, 94, 0.3);
+            border-bottom: 2px solid var(--accent-color);
+            transition: transform 0.3s ease;
+            transform: translateY(0);
+            height: 180px; /* 4x larger */
+            display: flex;
+            align-items: center;
+            border-bottom: 3px solid var(--accent-color);
+        }
+        
+        .top-bar-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .fade-messages {
+            flex: 1;
+            height: 120px; /* 4x larger */
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            font-weight: 600;
+            font-size: 1.6rem; /* Larger font */
+            letter-spacing: -0.2px;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .message {
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease, transform 1s ease;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            line-height: 1.3;
+            padding: 0 20px;
+        }
+        
+        .message.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
         .container {
             max-width: 1400px;
             margin: 0 auto;
@@ -56,7 +120,7 @@
             background: var(--gradient-purple);
             color: white;
             position: sticky;
-            top: 0;
+            top: 180px; /* ارتفاع الشريط الثابت 4x larger */
             z-index: 1000;
             box-shadow: var(--shadow-heavy);
             height: auto;
@@ -64,6 +128,7 @@
             padding: 0;
             transition: transform 0.3s ease;
             border-bottom: 3px solid var(--accent-color);
+            border-top: 2px solid rgba(255, 255, 255, 0.2);
         }
         
         .nav-container {
@@ -208,13 +273,15 @@
             background: var(--card-bg);
             border-radius: 25px;
             box-shadow: var(--shadow-heavy);
-            margin-top: 25px;
+            margin-top: 270px; /* ارتفاع الشريط الثابت + الهيدر */
             margin-bottom: 30px;
-            padding: 35px 30px;
+            padding: 35px 25px;
             min-height: auto;
             border: 1px solid rgba(232, 228, 213, 0.5);
             position: relative;
             overflow: hidden;
+            max-width: 100%;
+            width: 100%;
         }
         
         .section {
@@ -261,114 +328,11 @@
             border-radius: 2px;
         }
         
-        /* تصميم قسم الدورات التربوية المحدث */
-        .courses-section {
-            max-width: 100%;
-            margin: 0 auto;
-        }
-        
-        .courses-description {
-            text-align: center;
-            margin-bottom: 30px;
-            color: var(--text-light);
-            font-size: 1.1rem;
-            max-width: 800px;
-            margin-right: auto;
-            margin-left: auto;
-            line-height: 1.7;
-        }
-        
-        .certificate-cards {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 30px;
-            margin-top: 20px;
-        }
-        
-        .certificate-card {
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: var(--shadow-heavy);
-            transition: all 0.3s ease;
-            border: 1px solid rgba(232, 228, 213, 0.8);
-            position: relative;
-        }
-        
-        .certificate-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(44, 26, 94, 0.2);
-        }
-        
-        .certificate-header {
-            background: var(--gradient-purple);
-            color: white;
-            padding: 20px 25px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 3px solid var(--accent-color);
-        }
-        
-        .certificate-title {
-            font-size: 1.4rem;
-            font-weight: 700;
-        }
-        
-        .download-btn-container {
-            display: flex;
-            gap: 10px;
-        }
-        
-        .download-btn {
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            backdrop-filter: blur(5px);
-            font-weight: 600;
-            font-size: 0.9rem;
-            gap: 8px;
-        }
-        
-        .download-btn:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: scale(1.05);
-        }
-        
-        .certificate-image-container {
-            width: 100%;
-            padding: 25px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: linear-gradient(45deg, #f8f6f1, #f5f2ec);
-        }
-        
-        .certificate-image {
-            max-width: 100%;
-            max-height: 500px;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-            border: 1px solid rgba(193, 154, 95, 0.3);
-            transition: transform 0.3s ease;
-        }
-        
-        .certificate-image:hover {
-            transform: scale(1.02);
-        }
-        
-        /* تصميم بقية الأقسام */
+        /* تصميم قسم نبذة عني - توسيع وتحسين */
         .about-section {
             max-width: 100%;
             margin: 0 auto;
+            width: 100%;
         }
         
         .about-card {
@@ -381,6 +345,8 @@
             position: relative;
             overflow: hidden;
             border: 1px solid rgba(232, 228, 213, 0.5);
+            width: 100%;
+            max-width: 100%;
         }
         
         .about-card::before {
@@ -402,6 +368,7 @@
             position: relative;
             z-index: 1;
             text-align: center;
+            width: 100%;
         }
         
         .avatar {
@@ -421,6 +388,11 @@
             animation: floating 4s ease-in-out infinite;
         }
         
+        .about-info {
+            width: 100%;
+            max-width: 100%;
+        }
+        
         .about-info h3 {
             color: var(--secondary-color);
             margin-bottom: 15px;
@@ -428,6 +400,7 @@
             font-weight: 800;
             line-height: 1.3;
             letter-spacing: -0.5px;
+            text-align: center;
         }
         
         .about-info p {
@@ -435,6 +408,9 @@
             line-height: 1.7;
             margin-bottom: 12px;
             font-size: 1.1rem;
+            text-align: center;
+            max-width: 100%;
+            width: 100%;
         }
         
         .highlight {
@@ -443,10 +419,12 @@
         }
         
         .about-details {
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-columns: 1fr;
             gap: 25px;
             margin-top: 30px;
+            width: 100%;
+            max-width: 100%;
         }
         
         .detail-item {
@@ -458,6 +436,7 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             position: relative;
             overflow: hidden;
+            width: 100%;
         }
         
         .detail-item:hover {
@@ -493,19 +472,24 @@
             color: var(--text-color);
             line-height: 1.7;
             font-size: 1.05rem;
+            text-align: right;
+            max-width: 100%;
         }
         
-        /* تصميم قسم الشواهد */
+        /* تصميم قسم الشواهد الوظيفية - توسيع وتحسين */
         .certificates-section {
             max-width: 100%;
             margin: 0 auto;
+            width: 100%;
         }
         
         .certificates-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 25px;
+            gap: 30px;
             margin-top: 20px;
+            width: 100%;
+            max-width: 100%;
         }
         
         .certificate-item {
@@ -518,6 +502,8 @@
             position: relative;
             overflow: hidden;
             border-top: 4px solid var(--primary-color);
+            width: 100%;
+            max-width: 100%;
         }
         
         .certificate-item:hover {
@@ -532,25 +518,31 @@
             margin-bottom: 20px;
             padding-bottom: 15px;
             border-bottom: 1px solid rgba(232, 228, 213, 0.8);
+            width: 100%;
+            flex-wrap: wrap;
+            gap: 15px;
         }
         
         .certificate-header-pdf h3 {
             color: var(--secondary-color);
             font-size: 1.4rem;
             font-weight: 700;
+            flex: 1;
+            min-width: 250px;
         }
         
         .certificate-actions {
             display: flex;
             gap: 10px;
+            flex-wrap: wrap;
         }
         
         .pdf-action-btn {
             background: var(--gradient-purple);
             color: white;
             border: none;
-            width: 38px;
-            height: 38px;
+            width: 42px;
+            height: 42px;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -559,6 +551,7 @@
             transition: all 0.3s ease;
             text-decoration: none;
             box-shadow: 0 4px 8px rgba(44, 26, 94, 0.2);
+            flex-shrink: 0;
         }
         
         .pdf-action-btn:hover {
@@ -568,17 +561,128 @@
         
         .pdf-viewer {
             width: 100%;
-            height: 500px;
+            height: 550px;
             border-radius: 12px;
             border: 1px solid rgba(232, 228, 213, 0.8);
             overflow: hidden;
             background: #f9f9f9;
+            max-width: 100%;
         }
         
         .pdf-viewer iframe {
             width: 100%;
             height: 100%;
             border: none;
+        }
+        
+        /* تصميم قسم الدورات التربوية المحدث - تصغير 75% */
+        .courses-section {
+            max-width: 100%;
+            margin: 0 auto;
+        }
+        
+        .courses-description {
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--text-light);
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin-right: auto;
+            margin-left: auto;
+            line-height: 1.7;
+        }
+        
+        .certificate-cards {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .certificate-card {
+            background: white;
+            border-radius: 15px; /* تصغير */
+            overflow: hidden;
+            box-shadow: var(--shadow-heavy);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(232, 228, 213, 0.8);
+            position: relative;
+            transform: scale(0.85); /* تصغير البطاقات 75% */
+            transform-origin: center;
+        }
+        
+        .certificate-card:hover {
+            transform: scale(0.88) translateY(-5px); /* تعديل التحويم ليتناسب مع التصغير */
+            box-shadow: 0 20px 40px rgba(44, 26, 94, 0.2);
+        }
+        
+        .certificate-header {
+            background: var(--gradient-purple);
+            color: white;
+            padding: 15px 20px; /* تصغير */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--accent-color);
+            min-height: 70px; /* تصغير */
+        }
+        
+        .certificate-title {
+            font-size: 1.05rem; /* تصغير 75% من 1.4rem */
+            font-weight: 700;
+            line-height: 1.3;
+            max-width: 70%;
+        }
+        
+        .download-btn-container {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .download-btn {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: none;
+            padding: 8px 15px; /* تصغير */
+            border-radius: 25px; /* تصغير */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            backdrop-filter: blur(5px);
+            font-weight: 600;
+            font-size: 0.675rem; /* تصغير 75% من 0.9rem */
+            gap: 5px;
+        }
+        
+        .download-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.05);
+        }
+        
+        .certificate-image-container {
+            width: 100%;
+            padding: 20px; /* تصغير */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(45deg, #f8f6f1, #f5f2ec);
+            min-height: 300px; /* تصغير */
+        }
+        
+        .certificate-image {
+            max-width: 100%;
+            max-height: 350px; /* تصغير من 500px */
+            border-radius: 8px; /* تصغير */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(193, 154, 95, 0.3);
+            transition: transform 0.3s ease;
+        }
+        
+        .certificate-image:hover {
+            transform: scale(1.02);
         }
         
         /* تصميم الأقسام الأخرى */
@@ -1120,6 +1224,10 @@
                 padding: 0 25px;
             }
             
+            .main-content {
+                padding: 35px 30px;
+            }
+            
             .nav-icon {
                 min-width: 75px;
                 padding: 10px 12px;
@@ -1147,6 +1255,11 @@
                 align-items: center;
             }
             
+            .about-info h3,
+            .about-info p {
+                text-align: right;
+            }
+            
             .avatar {
                 width: 170px;
                 height: 170px;
@@ -1157,7 +1270,14 @@
                 font-size: 2.1rem;
             }
             
-            .certificates-grid,
+            .about-details {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .certificates-grid {
+                grid-template-columns: 1fr;
+            }
+            
             .certificate-cards {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -1173,9 +1293,20 @@
         }
         
         @media (min-width: 768px) {
+            .fixed-top-bar {
+                padding: 20px 0;
+                height: 160px; /* تعديل للشاشات المتوسطة */
+            }
+            
+            .fade-messages {
+                font-size: 1.8rem;
+                height: 100px;
+            }
+            
             .navbar {
                 height: 95px;
                 padding: 0;
+                top: 160px; /* ارتفاع الشريط الثابت المعدل */
             }
             
             .nav-container {
@@ -1206,6 +1337,7 @@
             
             .main-content {
                 padding: 40px 35px;
+                margin-top: 255px; /* ارتفاع الشريط الثابت + الهيدر المعدل */
             }
             
             .section-title {
@@ -1213,9 +1345,7 @@
             }
             
             .about-details {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                gap: 30px;
+                grid-template-columns: repeat(3, 1fr);
             }
             
             .bio-grid {
@@ -1242,12 +1372,22 @@
                 gap: 30px;
             }
             
+            /* توسيع قسم الشواهد الوظيفية */
             .certificates-grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+            
+            .certificate-item {
+                padding: 30px;
+            }
+            
+            .pdf-viewer {
+                height: 600px;
             }
             
             .certificate-cards {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, 1fr);
             }
             
             .evaluation-grid,
@@ -1294,12 +1434,23 @@
                 grid-template-columns: repeat(2, 1fr);
             }
             
+            /* توسيع قسم الشواهد الوظيفية للشاشات الكبيرة */
             .certificates-grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: 1fr;
+                max-width: 100%;
+            }
+            
+            .certificate-item {
+                max-width: 100%;
+                padding: 35px;
+            }
+            
+            .pdf-viewer {
+                height: 650px;
             }
             
             .certificate-cards {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(3, 1fr);
             }
             
             .evaluation-grid,
@@ -1328,6 +1479,23 @@
                 font-size: 2rem;
             }
             
+            /* توسيع قسم نبذة عني للشاشات الكبيرة جداً */
+            .about-card {
+                padding: 40px 35px;
+            }
+            
+            .about-info h3 {
+                font-size: 2.3rem;
+            }
+            
+            .about-info p {
+                font-size: 1.15rem;
+            }
+            
+            .detail-item {
+                padding: 28px;
+            }
+            
             .planning-grid {
                 grid-template-columns: repeat(3, 1fr);
             }
@@ -1336,8 +1504,17 @@
                 grid-template-columns: repeat(4, 1fr);
             }
             
+            /* توسيع قسم الشواهد الوظيفية للشاشات الكبيرة جداً */
             .certificates-grid {
-                grid-template-columns: repeat(2, 1fr);
+                max-width: 100%;
+            }
+            
+            .certificate-item {
+                padding: 40px;
+            }
+            
+            .pdf-viewer {
+                height: 700px;
             }
             
             .certificate-cards {
@@ -1354,9 +1531,20 @@
         }
         
         @media (max-height: 600px) and (orientation: landscape) {
+            .fixed-top-bar {
+                padding: 10px 0;
+                height: 120px;
+            }
+            
+            .fade-messages {
+                height: 80px;
+                font-size: 1.2rem;
+            }
+            
             .navbar {
                 height: auto;
                 min-height: 65px;
+                top: 120px;
             }
             
             .nav-container {
@@ -1397,8 +1585,193 @@
                 font-size: 0.65rem;
             }
             
+            .main-content {
+                margin-top: 185px;
+            }
+            
             .pdf-viewer {
                 height: 350px;
+            }
+            
+            /* تعديلات قسم الدورات للشاشات الأفقية */
+            .certificate-card {
+                transform: scale(0.75);
+            }
+            
+            .certificate-card:hover {
+                transform: scale(0.78) translateY(-5px);
+            }
+            
+            .certificate-title {
+                font-size: 0.9rem;
+            }
+            
+            .download-btn {
+                font-size: 0.6rem;
+                padding: 6px 12px;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .fixed-top-bar {
+                padding: 10px 0;
+                height: 140px;
+            }
+            
+            .top-bar-container {
+                padding: 0 15px;
+            }
+            
+            .fade-messages {
+                font-size: 1.2rem;
+                height: 100px;
+            }
+            
+            .navbar {
+                top: 140px;
+            }
+            
+            .main-content {
+                margin-top: 220px;
+                padding: 30px 20px;
+            }
+            
+            /* تعديلات قسم الشواهد الوظيفية للشاشات الصغيرة */
+            .certificates-grid {
+                gap: 25px;
+            }
+            
+            .certificate-item {
+                padding: 20px;
+            }
+            
+            .certificate-header-pdf {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+            
+            .certificate-header-pdf h3 {
+                min-width: 100%;
+                text-align: center;
+            }
+            
+            .certificate-actions {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .pdf-viewer {
+                height: 400px;
+            }
+            
+            /* تعديلات قسم الدورات للشاشات الصغيرة */
+            .certificate-card {
+                transform: scale(0.9);
+            }
+            
+            .certificate-card:hover {
+                transform: scale(0.93) translateY(-5px);
+            }
+            
+            .certificate-title {
+                font-size: 0.95rem;
+            }
+            
+            .download-btn {
+                font-size: 0.65rem;
+                padding: 7px 12px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .fixed-top-bar {
+                height: 120px;
+            }
+            
+            .fade-messages {
+                font-size: 1rem;
+                height: 80px;
+            }
+            
+            .message {
+                white-space: normal;
+                text-align: center;
+                line-height: 1.3;
+                padding: 0 10px;
+            }
+            
+            .navbar {
+                top: 120px;
+            }
+            
+            .main-content {
+                margin-top: 200px;
+                padding: 25px 15px;
+            }
+            
+            /* تعديلات قسم نبذة عني للشاشات الصغيرة جداً */
+            .about-card {
+                padding: 25px 20px;
+            }
+            
+            .avatar {
+                width: 120px;
+                height: 120px;
+                font-size: 3rem;
+            }
+            
+            .about-info h3 {
+                font-size: 1.6rem;
+            }
+            
+            .about-info p {
+                font-size: 1rem;
+            }
+            
+            .detail-item {
+                padding: 20px;
+            }
+            
+            /* تعديلات قسم الشواهد الوظيفية للشاشات الصغيرة جداً */
+            .certificates-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .certificate-item {
+                padding: 18px;
+            }
+            
+            .pdf-viewer {
+                height: 350px;
+            }
+            
+            /* تعديلات قسم الدورات للشاشات الصغيرة جداً */
+            .certificate-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .certificate-card {
+                transform: scale(0.85);
+            }
+            
+            .certificate-card:hover {
+                transform: scale(0.88) translateY(-5px);
+            }
+            
+            .certificate-title {
+                font-size: 0.85rem;
+            }
+            
+            .certificate-header {
+                flex-direction: column;
+                gap: 10px;
+                padding: 12px 15px;
+            }
+            
+            .certificate-title {
+                max-width: 100%;
+                text-align: center;
             }
         }
         
@@ -1418,6 +1791,19 @@
     </style>
 </head>
 <body class="no-select">
+    <!-- Fixed Top Bar - Updated (4x larger, no close button) -->
+    <div class="fixed-top-bar">
+        <div class="top-bar-container">
+            <div class="fade-messages">
+                <div class="message active">كلّ طالب يستحق فرصة للتميّز</div>
+                <div class="message">التعليم رحلة… ودوري أن أجعلها ممتعة</div>
+                <div class="message">كل فكرة عظيمة تبدأ بسؤال</div>
+                <div class="message">التقنية وسيلة لتمكين التعلم</div>
+                <div class="message">التقييم من أجل التعلّم وليس لمجرّد الحكم</div>
+            </div>
+        </div>
+    </div>
+
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo">
@@ -2058,6 +2444,7 @@
             
             let lastScrollTop = 0;
             const navbar = document.querySelector('.navbar');
+            const fixedTopBar = document.querySelector('.fixed-top-bar');
             
             window.addEventListener('scroll', function() {
                 const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -2065,12 +2452,37 @@
                 if (scrollTop > lastScrollTop && scrollTop > 100) {
                     navbar.style.transform = 'translateY(-100%)';
                     navbar.style.transition = 'transform 0.3s ease';
+                    fixedTopBar.style.transform = 'translateY(-100%)';
+                    fixedTopBar.style.transition = 'transform 0.3s ease';
                 } else {
                     navbar.style.transform = 'translateY(0)';
+                    fixedTopBar.style.transform = 'translateY(0)';
                 }
                 
                 lastScrollTop = scrollTop;
             });
+            
+            // Fixed Top Bar Functionality - Updated
+            const messages = document.querySelectorAll('.message');
+            
+            if (fixedTopBar && messages.length > 0) {
+                let currentMessageIndex = 0;
+                
+                function rotateMessages() {
+                    messages[currentMessageIndex].classList.remove('active');
+                    currentMessageIndex = (currentMessageIndex + 1) % messages.length;
+                    messages[currentMessageIndex].classList.add('active');
+                }
+                
+                let messageInterval = setInterval(rotateMessages, 4000);
+                
+                messages.forEach(message => {
+                    message.addEventListener('click', function() {
+                        clearInterval(messageInterval);
+                        messageInterval = setInterval(rotateMessages, 4000);
+                    });
+                });
+            }
             
             loadSection('about');
         });
